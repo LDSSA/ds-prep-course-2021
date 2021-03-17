@@ -292,24 +292,20 @@ git pull
 
 * **Note:** the `git pull` command downloads all the new contents/changes on the remote repository to your local copy.
 
-**Step 2 -** Copy the Week folder with the Learning Units to your local `ds-prep-workspace` folder:
+**Step 2 -** Copy the Week folder with the Learning Units to your local `ds-prep-workspace`:
 
 ```bash
 cp -r ~/projects/ds-prep-course-2021/"Week <week number>" ~/projects/ds-prep-workspace/
 ``` 
 * Replace `"Week <week number>"` by the appropriate folder name. Example: for Week 0 we would write `"Week 0"`
 
-**Setting up a virtual environment**
+**Setting up the virtual environment**
 
-**Step 3:** Activate a virtual environment:
+We will be using the same virtual environment throughout the course - we'll name it `prep-venv`.
+
+**Step 3:** Activate the environment:
 ```bash
 source ~/.virtualenvs/prep-venv/bin/activate
-```
-
-**Example:**
-
-```bash
-source ~/.virtualenvs/week0/bin/activate
 ```
 
 - Install the python packages from `requirements.txt` **for each learning unit** (there are multiple learning units (SLU's) in a Week!)
