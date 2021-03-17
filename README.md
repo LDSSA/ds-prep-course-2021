@@ -186,13 +186,13 @@ mkdir ~/projects
 cd ~/projects
 ```
 
-**Step 3:** You can now **clone** the `ds-prep-workspace` repository you created on GitHub (replace `<username>` below with your github username) by running the command:
+**Step 4:** You can now **clone** the `ds-prep-workspace` repository you created on GitHub (replace `<username>` below with your github username) by running the command:
 
 ```bash
 git clone https://github.com/<username>/ds-prep-workspace.git
 ```
 
-**Step 4:** You'll be asked for your git username. Type it and press <kbd>enter</kbd>. Then you'll be asked for your git password. Type it and press <kbd>enter</kbd>
+**Step 5:** You'll be asked for your git username. Type it and press <kbd>enter</kbd>. Then you'll be asked for your git password. Type it and press <kbd>enter</kbd>
 
 You should now have a local copy of your `ds-prep-workspace` in your `~/projects/ds-prep-workspace` folder.
 
@@ -237,7 +237,7 @@ git clone https://github.com/LDSSA/ds-prep-course-2021.git
 python3 --version
 ```
 
-**Step 2:** If your version is not `Python 3.7.x` (`x` = any number), run the following to install **Python 3.7**:
+**Step 2:** If your version is not `Python 3.7.x` (`x` = any number), run the following to install _Python 3.7_:
 
 ```bash
 #TODO - install steps Python 3.7
@@ -265,9 +265,7 @@ brew install python
 
 ### **1.6 Creating a virtual environment**
 
-Before you work on a learning unit, you'll need to activate a [**virtual environment**](https://realpython.com/python-virtual-environments-a-primer/#what-is-a-virtual-environment). By using a virtual environment, you ensure that you have a stable and compatible set of Python packages. You should not work outside a virtual environment. Don't say we didn't warn you.
-
-On the Prep Course we will use the same environment throughout. As a data scientist though, you'll probably create different environments for different purposes or projects.
+Before you work on a learning unit, you'll need to activate a [**virtual environment**](https://realpython.com/python-virtual-environments-a-primer/#what-is-a-virtual-environment). By using a virtual environment, you ensure that you have a stable and compatible set of Python packages. On the Prep Course we will use the same environment throughout. As a data scientist though, you'll probably create different environments for different purposes or projects.
 
 **Step 1:** Start by ensuring `pip`, `setuptools`, and `wheel` are up to date:
 
@@ -288,7 +286,7 @@ source ~/.virtualenvs/prep-venv/bin/activate
 After you activate your virtual environment you should see at the leftmost of your command line the name of your virtual environment surrounded by parenthesis, like this:
 > `(prep-venv) mig@macbook-pro %`
 
-**Step 4:** Finally, don't forget to update `pip`.
+**Step 4:** Last but not least, don't forget to update `pip`.
 ```bash
 pip install -U pip
 ```
