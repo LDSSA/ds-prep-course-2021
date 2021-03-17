@@ -37,17 +37,19 @@ Follow these steps to make sure your machine is ready **before** the course star
 
 2. [Learning Unit Workflow](#2-learning-unit-workflow)
 
-3. [Updates to Learning Units](#3-updates-to-learning-units)
+3. [Working on the learning units](#2-working-on-the-learning-units)
+
+4. [Updates to Learning Units](#4-updates-to-learning-units)
 
 ### **Help**
 
-4. [How to ask for help](#41-how-to-ask-for-help)
+5. [How to ask for help](#5-how-to-ask-for-help)
 
-5. [Troubleshooting](#42-Troubleshooting)
+6. [Troubleshooting](#6-Troubleshooting)
     
-6. [Tips and Tricks](#43-Tips-and-Tricks)
+7. [Tips and Tricks](#7-Tips-and-Tricks)
 
-7. [Tutorial videos](#5-videos)
+8. [Tutorial videos](#8-videos)
 
 <br>
 
@@ -265,101 +267,269 @@ brew install python
 #TODO - Install Python 3.7 and setup packages in Mac OS
 ```
 
-### **1.6 Testing the workflow**
-Finally, test the workflow ([next section](#2-learning-unit-workflow)) on `"Week 0"`. After that you'll be officially ready to start the course!
+### **1.6 Creating a virtual environment**
+
+Before you work on a learning unit, you'll need to activate a [**virtual environment**](https://realpython.com/python-virtual-environments-a-primer/#what-is-a-virtual-environment). By using a virtual environment, you ensure that you have a stable and compatible set of Python packages. Don't work outside a virtual environment. Don't say we didn't warn you.
+
+For this Prep Course we will use the same environment throughout, since we won't need too many packages. In the LDSSA though, you'll be creating new environments as each learning unit is released.
+
+**Step 1:** Start by ensuring `pip`, `setuptools`, and `wheel` are up to date:
+
+```bash
+python3.7 -m pip install --user --upgrade pip setuptools wheel
+```
+
+**Step 2:** Create a virtual environment with the name `prep-venv`:
+```bash
+python3.7 -m venv ~/.virtualenvs/prep-venv
+```
+**Step 3:** Activate the environment
+
+```bash
+source ~/.virtualenvs/prep-venv/bin/activate
+```
+
+After you activate your virtual environment you should see at the leftmost of your command line the name of your virtual environment surrounded by parenthesis, like this:
+
+```bash
+(prep-venv) mig@macbook-pro %
+```
+
+**Step 4:** Finally, don't forget to update `pip`.
+```bash
+pip install -U pip
+```
+
+You can also follow [this guide](guides/How_to_set_up_python_virtual_environments.md) for a more in depth set of instructions that accomplish exactly the same thing.
+
+<br>
+
+### **1.7 Testing the workflow**
+Finally, test the workflow ([next section](#2-learning-unit-workflow)) on `"Week 0"`. After that you'll be officially ready to start the course! This folder is used to give instructors guidelines to produce the learning units. We are also using it to ensure that you are able to run and submit a learning unit.
 
 
 <br>
 
 ---
 
-## 2. Learning Unit Workflow
+## **2. Learning Unit Workflow**
 
-**Each week** a new folder will be released on the [`ds-prep-course-2021`](https://github.com/LDSSA/ds-prep-course-2021) repository. For example, on Week 1 (April 5 - April 11), the folder containing the learning units will be called `"Week 1"`. The releases will be announced on Slack, on the ___#announcements___ channel.
+**Each week** a new folder is released on [`ds-prep-course-2021`](https://github.com/LDSSA/ds-prep-course-2021) repository. On week 1 (April 5 - April 11), the folder released will be called `"Week 1"`. On week 2, it will be called `"Week 2"`, and so on. These folders contain the learning units you'll be working on. The releases will be announced on Slack, on the ___#announcements___ channel.
 
-📝 _You will need to follow the workflow (steps) described in this section **every** week_
+⚠️ **Important:** You will need to follow the steps described in this section **every** week, after each release.
 
-Once a new Learning Unit is available at the beginning of each week, do the following:
+<br>
 
-
-**Step 1 -** Pull the changes from the 
-[ds-prep-course-2021](https://github.com/LDSSA/ds-prep-course-2021) repo:
+### **Step 1: Pull the learning materials**
+Pull the changes from the 
+[ds-prep-course-2021](https://github.com/LDSSA/ds-prep-course-2021) repo by running the following commands on your Ubuntu terminal:
     
 ```bash
 cd ~/projects/ds-prep-course-2021/
+```
+```bash
 git pull
 ```
 
-* **Note:** the `git pull` command downloads all the new contents/changes on the remote repository to your local copy.
+* **Note:** the `git pull` command pulls all new changes from the remote repository to your local copy (`~/projects/ds-prep-course-2021`).
 
-**Step 2 -** Copy the Week folder with the Learning Units to your local `ds-prep-workspace`:
+<br>
+
+### **Step 2: Copy to your workspace**
+Copy the weekly folder to your local `ds-prep-workspace`:
 
 ```bash
 cp -r ~/projects/ds-prep-course-2021/"Week <week number>" ~/projects/ds-prep-workspace/
 ``` 
-* Replace `"Week <week number>"` by the appropriate folder name. Example: for Week 0 we would write `"Week 0"`
+* **Note:** Replace `"Week <week number>"` by the appropriate folder name on the command above. Example: for Week 0 you should write `"Week 0"`
+* If you're curious about how you could this using your OS GUI [check this guide](guides/using_os_gui_to_manage_directories.md)
 
-**Setting up the virtual environment**
+<br>
 
-We will be using the same virtual environment throughout the course - we'll name it `prep-venv`.
-
-**Step 3:** Activate the environment:
+### **Step 3: Activate the virtual environment**
+Activate the `prep-venv` environment you created on the Initial Setup:
 ```bash
 source ~/.virtualenvs/prep-venv/bin/activate
 ```
+<br>
 
-- Install the python packages from `requirements.txt` **for each learning unit** (there are multiple learning units (SLU's) in a Week!)
-    ```bash
-    pip install -r ~/projects/ds-prep-workspace/"Week <week number>"/"<SLU name>"/requirements.txt
-    ```
-    and you would replace `<week number>` and `<SLU name>`, such that in Week 0 and SLU000 - Jupyter Notebook, for example, the command would be:
-    ```bash
-    pip install -r ~/projects/ds-prep-workspace/"Week 0"/"SLU000 - Jupyter Notebook"/requirements.txt
-    ```
-1. Change to the `ds-prep-workspace` dir
-    ```bash
-    cd ~/projects/ds-prep-workspace
-    ```
-1. Open Jupyter Notebook
-    ```bash
-    jupyter notebook
-    ```
-1. Work
-1. Once all tests pass or once you're happy, save your work, close the browser tab with the Jupyter Notebook, close the terminal and open a new terminal
-1. Then commit the changes and push
-    ```bash
-    cd ~/projects/ds-prep-workspace
-    git add .
-    git commit -m "Work on week <week number> exercises"
-    git push
-    ```
-1. Profit
+### **Step 4: Install the `requirements`**
+Install the python packages from `requirements.txt` for each learning unit (there are multiple learning units (SLU's) in a Week!)
 
-## 3. Updates to Learning Units
+```bash
+pip install -r ~/projects/ds-prep-workspace/"Week <week number>"/"<SLU name>"/requirements.txt
+```
 
-As much as we try and have processes in place to prevent errors and bugs in 
-the learning units some make it through to you.
-If the problem is not in the exercise notebook you can just pull the new 
-version from the `ds-prep-course-2021` repo and replace the file on your ds-prep-workspace.
-The problem is if the correction is in the exercise notebook, you can't just
-replace the file because your work is there and you'll lose it!
+**Example:** For Week 0 you'd do:
+```bash
+pip install -r ~/projects/ds-prep-workspace/"Week 0"/"SLU00 - Jupyter Notebook"/requirements.txt
+```
 
-When a new version of the exercise notebook is released (and announced) you will have to merge the work you've already done into the new version of the
-notebook.
+<br>
+
+### **Step 5 - Go to `ds-prep-workspace`**
+Enter the `ds-prep-workspace` directory:
+
+```bash
+cd ~/projects/ds-prep-workspace
+```
+
+<br>
+
+### **Step 6 - Open Jupyter Notebook**
+
+Open the Jupyter Notebook application by running:
+```bash
+jupyter notebook
+```
+If you are running **Windows 10**, run the following **instead**:
+```bash
+jupyter notebook --NotebookApp.use_redirect_file=False
+```
+
+**What should happen now?**
+
+- When you run the `jupyter notebook` command, you should see something similar to this in your terminal:
+![Open exercise notebook](assets/jupyter_terminal.png "Open exercise notebook")
+
+- and your browser should pop up with Jupyter open, however, if this does not happen, you can simply copy the link you see on your terminal (the one that contains `localhost`) and past it in your browser's address bar:  ![Open exercise notebook](assets/jupyter_terminal_link.png "Open exercise notebook")
+
+> **Note:** If you see some  scary looking messages, don't worry, you can just ignore them.
+
+<br>
+
+### **Step 7**
+The previous command should open a localhost page on your browser. 
+
+Now follow the steps on [Working](#3-working-on-the-learning-units) on how to work on the notebooks and come back to **Step 8** when you're done.
+
+<br>
+
+### **Step 8**
+
+Since all tests pass or once you're happy, save your work, close the browser tab with the Jupyter Notebook, close the terminal.
+
+<br>
+
+### **Step 9:**
+Open a new terminal and run the following 4 commands sequentiallty:
+
+* Go to your workspace folder:
+```bash
+cd ~/projects/ds-prep-workspace
+```
+
+* Stage your changes:
+```bash
+git add .
+```
+
+* Commit your changes with an informative message:
+```bash
+git commit -m "Work on week <week number> exercises"
+```
+
+* Push to your remote repository:
+```bash
+git push
+```
+
+<br>
+
+## **3. Working on the Learning Units**
+
+All learning units come as a set of **Jupyter Notebooks** (and some links to presentations). Jupyter Notebooks are documents that can contain text, images and live code that you can run interactively.
+
+Once you have activated your environment and opened the Jupyter Notebook application (steps 1-6 of the [workflow](#2-learning-unit-workflow)) feel free to explore the sample learning unit structure. It will give you a handle on what to expect and what rules the instructors
+follow (and the effort they put) when creating a learning unit.
+
+> **Note:** It is **VERY IMPORTANT** that you **ALWAYS** work on the files on your `ds-prep-workspace` repository, and **NEVER** work on files that are in your `ds-prep-course-2021` repository!
+
+
+
+1. Activate the environment and run jupyter notebook
+
+
+![Open exercise notebook](assets/jupyter_error_red.png "Open exercise notebook")
+
+##### The Exercise Notebook
+
+Make sure you open and go through the Learning Notebook first.
+
+Every learning unit contains an exercise notebook with exercises you will
+work on.
+So let's have a look at the sample Learning Unit. 
+1. On the Jupyter Notebook UI in the browser open the exercise notebook
+![Open exercise notebook](assets/jupyter_exercise_notebook.png "Open exercise notebook")
+1. Follow the instructions provided in the notebook
+
+You'll see cells with the exercises and cells for you to write solutions.
+
+Once you've solved all of the notebook we recommend following this simple 
+checklist to avoid unexpected surprises.
+1. Save the notebook (again)
+1. Run "Restart & Run All"
+![Restart & Run All](assets/jupyter_clear_and_run.png "Restart & Run All")
+1. At this point the notebook should have run without any error messages
+showing up.
+1. When you're done (after saving your work) you can go to the terminal and close it:
+<img src='assets/terminal_notebook.png' alt='Sample learning unit' width="70%"/>
+
+#### Commit and Push
+
+>Note: It is **VERY IMPORTANT** that you **ALWAYS** work on the files in your `ds-prep-workspace` repository, and **NEVER** work on files that are in your `ds-prep-course-2021` repository! So before you do this step, make sure that the files you made changes to are the ones in your `ds-prep-workspace` folder.
+
+Now you have worked on the sample learning unit and you have some uncommitted 
+changes.
+It's time to commit the changes, which just means adding them to your 
+`ds-prep-workspace` repository history, and pushing this history to your 
+remote on _GitHub_.
+
+* First you need to configure your email and username (replace "mig.dias.1212@gmail.com" with your email, and "buedaswag" with your username):
+```bash
+git config --global user.email "mig.dias.1212@gmail.com"
+git config --global user.username "buedaswag"
+git config --global user.name "Bueda Swag"
+```
+
+* Using the terminal first make sure you're in the right directory (using the `cd` command), then commit and push the changes
+```bash
+cd ~/projects/ds-prep-workspace
+git add .
+git commit -m 'Testing the sample notebook'
+git push
+```
+
+* Now type your git username, then press <kbd>enter</kbd>
+* Then type your git password , then press <kbd>enter</kbd>
+* You're all set!
+
+<br>
+
+## **3. Updates to Learning Units**
+
+As much as we try and have processes in place to prevent errors and bugs in the learning units some make it through to you.
+
+If the problem is not in the exercise notebook you can just pull the new version from the `ds-prep-course-2021` repo and replace the file on your `ds-prep-workspace` (steps 1 and 2 from last section).
+
+If the correction is in the exercise notebook, however, you can't just replace the file because your work is there and you'll lose it!
+
+When a new version of the exercise notebook is released (and announced) you will have to merge the work you've already did into the new version of the notebook.
 
 At the moment our suggestion to merge the changes is: 
-1. Rename the old version
-1. Copy the new exercise notebook over
-1. Open both and copy paste your solutions to the new notebook
+1. Rename the old version;
+1. Copy the new exercise notebook over;
+1. Open both and copy paste your solutions to the new notebook.
 
 We understand it's not ideal and are working on improving this workflow.
 
-## 4. Help
+<br>
+
+## **4. Help**
 
 ### 4.1 How to ask for help
 
-During the prep-course you will surely run into problems and have doubts about the
-material.
+During the Prep Course you will surely run into problems and have questions about the materials.
 Please refer to [this wiki page](https://github.com/LDSSA/wiki/wiki/Data-Science-Prep-Course#how-to-ask-for-help) on how to ask for help!
 
 ### 4.2 Troubleshooting
