@@ -120,4 +120,5 @@ The Windows Explorer should pop up:
 
 Keep in mind that you should manipulate files and create directories inside your `Ubuntu-18.04/home/<your name>` folder.
 
-## You're all set!  
+
+Don't forget to continue the [**Initial Setup**](/./README.md)!!

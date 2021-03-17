@@ -53,7 +53,7 @@ Follow these steps to make sure your machine is ready **before** the course star
 
 <br>
 
-🎁🎬 Check the [tutorial videos](#videos) if you have any doubts after following this tutorial. These videos were made for the **Prep Course** of year 2020, so there may be some differences, but overall you'll be running the same commands on both.
+🎁🎬 Check the [tutorial videos](#videos) if you have any doubts after following this tutorial. These videos were made for the **Prep Course** of year 2020, so there may be some differences.
 
 <br>
 
@@ -61,9 +61,8 @@ Follow these steps to make sure your machine is ready **before** the course star
 ## **1. Initial Setup**
 
 
-By completing this you will setup and learn about all the tools you'll be
-using during the academy. Don't worry if you can't figure out what some of the the commands you will use do. 
-Anything that is important will be explained in more detail during the course.
+Here you'll setup and learn about all the tools you'll be
+using during the academy. Don't worry if you can't figure out what some of the commands you will use do. Anything that is important will be explained in more detail during the course.
 
 ⚠️ **Important**: You should complete this setup by April 5, as the course will begin on that day. If you are struggling to install any of the software mentioned below, tell us ASAP!
 
@@ -71,25 +70,16 @@ Anything that is important will be explained in more detail during the course.
 
 <br>
 
-### **1.1(a) Windows Setup**
+### **1.1(a) Windows 10 Setup**
 
 This section deals with setting up Windows Subsystem for Linux (WSL) on Windows 10.
 If you are using MacOS or Linux, skip this section ([go to MacOS Setup](#11b-macos-setup)).
 
-<br>
-
 >**Why do I need to install WSL?**
 >
-> Windows Subsystem for Linux (WSL) enables you to run Linux command lines inside Windows. All of our setup instructions and learning materials are created for Mac OS/Linux, so we will not be able to provide support on how to do it on Windows.  
- 
+> Windows Subsystem for Linux (WSL) enables you to run Linux command lines inside Windows. All of our setup instructions are created for Mac OS/Linux, so we won't be able to provide support on how to do it on Windows.
 
-If you have some doubts/worries, feel free to reach out to us.
-
-<br>
-
-**Windows 10 Setup**
-
-Follow **[this guide](guides/Windows_Subsystem_for_Linux_Installation_Guide_for_Windows_10.md)** if you are running Windows 10.
+Follow **[this guide](guides/Windows_Subsystem_for_Linux_Installation_Guide_for_Windows_10.md)** to setup WSL on Windows 10.
 
 <br>
 
