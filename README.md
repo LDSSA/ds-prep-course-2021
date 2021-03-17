@@ -219,8 +219,6 @@ cd ~/projects
 git clone https://github.com/LDSSA/ds-prep-course-2021.git
 ```
 
-⚠️ You only need to clone a repository **once**, so you won't need to repeat these steps during the course!
-
 <br>
 
 ### **1.5 Installing Python 3.7 and all necessary packages**
