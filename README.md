@@ -49,11 +49,11 @@ Follow these steps to make sure your machine is ready **before** the course star
     
 7. [Tips and Tricks](#7-Tips-and-Tricks)
 
-8. [Tutorial videos](#8-videos)
+8. [Tutorial videos from Prep Course 2020](#8-tutorial-videos)
 
 <br>
 
-🎁🎬 Check the [tutorial videos](#videos) if you have any doubts after following this tutorial.
+🎁🎬 Check the [tutorial videos](#videos) if you have any doubts after following this tutorial. These videos were made for the **Prep Course** of year 2020, so there may be some differences, but overall you'll be running the same commands on both.
 
 <br>
 
@@ -136,6 +136,16 @@ brew install git
 **Step 2:** Create a _GitHub_ account
 
 [Sign up](https://github.com/join) for a _GitHub_ account and follow the instructions.
+
+<br>
+
+**Step 3:** Open an Ubuntu terminal. We'll configure your email and username by running the 3 commands below. **Replace** `mig.dias.1212@gmail.com` below with your email and `buedaswag` with your GitHub handle (username).
+
+```bash
+git config --global user.email "mig.dias.1212@gmail.com"
+git config --global user.username "buedaswag"
+git config --global user.name "Bueda Swag"
+```
 
 <br>
 
@@ -316,46 +326,32 @@ Finally, test the workflow ([next section](#2-learning-unit-workflow)) on `"Week
 
 **Each week** a new folder is released on [`ds-prep-course-2021`](https://github.com/LDSSA/ds-prep-course-2021) repository. On week 1 (April 5 - April 11), the folder released will be called `"Week 1"`. On week 2, it will be called `"Week 2"`, and so on. These folders contain the learning units you'll be working on. The releases will be announced on Slack, on the ___#announcements___ channel.
 
-⚠️ **Important:** You will need to follow the steps described in this section **every** week, after each release.
-
 <br>
 
-### **Step 1: Pull the learning materials**
-Pull the changes from the 
-[ds-prep-course-2021](https://github.com/LDSSA/ds-prep-course-2021) repo by running the following commands on your Ubuntu terminal:
-    
+### **2.1 Weekly Setup - Get the learning materials**
+
+⚠️ **Very Important**: *This section is to be done **one and one time only each week**. Otherwise you may risk overwriting your work. Each time you copy one folder to another in Ubuntu, the destination will be overwritten, no questions asked.*
+<br>
+
+Run the following on a terminal:
+
 ```bash
 cd ~/projects/ds-prep-course-2021/
 ```
 ```bash
 git pull
 ```
-
-* **Note:** the `git pull` command pulls all new changes from the remote repository to your local copy (`~/projects/ds-prep-course-2021`).
-
-<br>
-
-### **Step 2: Copy to your workspace**
-Copy the weekly folder to your local `ds-prep-workspace`:
-
 ```bash
 cp -r ~/projects/ds-prep-course-2021/"Week <week number>" ~/projects/ds-prep-workspace/
 ``` 
-* **Note:** Replace `"Week <week number>"` by the appropriate folder name on the command above. Example: for Week 0 you should write `"Week 0"`
-* If you're curious about how you could this using your OS GUI [check this guide](guides/using_os_gui_to_manage_directories.md)
 
-<br>
+If you're curious about how you could this using your OS GUI [check this guide](guides/using_os_gui_to_manage_directories.md)
 
-### **Step 3: Activate the virtual environment**
 Activate the `prep-venv` environment you created on the Initial Setup:
 ```bash
 source ~/.virtualenvs/prep-venv/bin/activate
 ```
-<br>
-
-### **Step 4: Install the `requirements`**
-Install the python packages from `requirements.txt` for each learning unit (there are multiple learning units (SLU's) in a Week!)
-
+Install the python packages from `requirements.txt` for each learning unit (there are multiple learning units (SLU's) in a Week!):
 ```bash
 pip install -r ~/projects/ds-prep-workspace/"Week <week number>"/"<SLU name>"/requirements.txt
 ```
@@ -367,18 +363,19 @@ pip install -r ~/projects/ds-prep-workspace/"Week 0"/"SLU00 - Jupyter Notebook"/
 
 <br>
 
-### **Step 5 - Go to `ds-prep-workspace`**
-Enter the `ds-prep-workspace` directory:
+### **2.2 - Working on the learning units**
 
-```bash
-cd ~/projects/ds-prep-workspace
-```
+Each time you want to work on the materials that you already copied to your workspace, follow these steps.
 
 <br>
 
-### **Step 6 - Open Jupyter Notebook**
+**Step 1** - Enter the `ds-prep-workspace` directory:
+```bash
+cd ~/projects/ds-prep-workspace
+```
+<br>
 
-Open the Jupyter Notebook application by running:
+**Step 2** - Open the Jupyter Notebook application by running:
 ```bash
 jupyter notebook
 ```
@@ -387,122 +384,62 @@ If you are running **Windows 10**, run the following **instead**:
 jupyter notebook --NotebookApp.use_redirect_file=False
 ```
 
-**What should happen now?**
-
 - When you run the `jupyter notebook` command, you should see something similar to this in your terminal:
 ![Open exercise notebook](assets/jupyter_terminal.png "Open exercise notebook")
+and your browser should pop up with Jupyter open. However, if this does not happen, you can simply copy the link you see on your terminal (the one that starts by  `http://localhost`) and past it in your browser's address bar.
 
-- and your browser should pop up with Jupyter open, however, if this does not happen, you can simply copy the link you see on your terminal (the one that contains `localhost`) and past it in your browser's address bar:  ![Open exercise notebook](assets/jupyter_terminal_link.png "Open exercise notebook")
-
-> **Note:** If you see some  scary looking messages, don't worry, you can just ignore them.
-
-<br>
-
-### **Step 7**
-The previous command should open a localhost page on your browser. 
-
-Now follow the steps on [Working](#3-working-on-the-learning-units) on how to work on the notebooks and come back to **Step 8** when you're done.
+    **Note:** If you see some  scary looking messages, don't worry, you can just ignore them.
 
 <br>
 
-### **Step 8**
+**Step 3** - Work on the learning unit
 
-Since all tests pass or once you're happy, save your work, close the browser tab with the Jupyter Notebook, close the terminal.
+All learning units come as a set of **Jupyter Notebooks**. These are documents that can contain text, images and live code that you can run interactively.
 
-<br>
+- **Learning Notebook**:
+Make sure you open and go through the Learning Notebook(s) first.
 
-### **Step 9:**
-Open a new terminal and run the following 4 commands sequentiallty:
+> ⚠️ **Important:** **ALWAYS** work on the files on your `ds-prep-workspace` repository. **NEVER** work on files inside in the `ds-prep-course-2021` repository!
 
-* Go to your workspace folder:
-```bash
-cd ~/projects/ds-prep-workspace
-```
+- **Exercise Notebook:**
 
-* Stage your changes:
-```bash
-git add .
-```
-
-* Commit your changes with an informative message:
-```bash
-git commit -m "Work on week <week number> exercises"
-```
-
-* Push to your remote repository:
-```bash
-git push
-```
-
-<br>
-
-## **3. Working on the Learning Units**
-
-All learning units come as a set of **Jupyter Notebooks** (and some links to presentations). Jupyter Notebooks are documents that can contain text, images and live code that you can run interactively.
-
-Once you have activated your environment and opened the Jupyter Notebook application (steps 1-6 of the [workflow](#2-learning-unit-workflow)) feel free to explore the sample learning unit structure. It will give you a handle on what to expect and what rules the instructors
-follow (and the effort they put) when creating a learning unit.
-
-> **Note:** It is **VERY IMPORTANT** that you **ALWAYS** work on the files on your `ds-prep-workspace` repository, and **NEVER** work on files that are in your `ds-prep-course-2021` repository!
-
-
-
-1. Activate the environment and run jupyter notebook
-
-
-![Open exercise notebook](assets/jupyter_error_red.png "Open exercise notebook")
-
-##### The Exercise Notebook
-
-Make sure you open and go through the Learning Notebook first.
-
-Every learning unit contains an exercise notebook with exercises you will
-work on.
-So let's have a look at the sample Learning Unit. 
-1. On the Jupyter Notebook UI in the browser open the exercise notebook
+    This is a notebook with exercises you will work on. For example, on the sample Learning Unit we have:
 ![Open exercise notebook](assets/jupyter_exercise_notebook.png "Open exercise notebook")
-1. Follow the instructions provided in the notebook
 
-You'll see cells with the exercises and cells for you to write solutions.
+    - Follow the instructions provided in the notebook. You'll see cells with the exercises and cells for you to write solutions.
 
-Once you've solved all of the notebook we recommend following this simple 
-checklist to avoid unexpected surprises.
-1. Save the notebook (again)
-1. Run "Restart & Run All"
-![Restart & Run All](assets/jupyter_clear_and_run.png "Restart & Run All")
-1. At this point the notebook should have run without any error messages
-showing up.
-1. When you're done (after saving your work) you can go to the terminal and close it:
+    - Once you've solved all of the exercises we recommend following this simple checklist to avoid unexpected surprises:
+        1. Save the notebook (again)
+        1. Run "Restart & Run All"
+        ![Restart & Run All](assets/jupyter_clear_and_run.png "Restart & Run All")
+        1. At this point the notebook should have run without any error messages showing up.
 <img src='assets/terminal_notebook.png' alt='Sample learning unit' width="70%"/>
+        1. Close the browser and the terminal.
 
-#### Commit and Push
+<br>
 
->Note: It is **VERY IMPORTANT** that you **ALWAYS** work on the files in your `ds-prep-workspace` repository, and **NEVER** work on files that are in your `ds-prep-course-2021` repository! So before you do this step, make sure that the files you made changes to are the ones in your `ds-prep-workspace` folder.
+**Step 4** -  Commit and push
 
-Now you have worked on the sample learning unit and you have some uncommitted 
-changes.
-It's time to commit the changes, which just means adding them to your 
-`ds-prep-workspace` repository history, and pushing this history to your 
-remote on _GitHub_.
-
-* First you need to configure your email and username (replace "mig.dias.1212@gmail.com" with your email, and "buedaswag" with your username):
-```bash
-git config --global user.email "mig.dias.1212@gmail.com"
-git config --global user.username "buedaswag"
-git config --global user.name "Bueda Swag"
-```
-
-* Using the terminal first make sure you're in the right directory (using the `cd` command), then commit and push the changes
+Open a terminal and run the following:
 ```bash
 cd ~/projects/ds-prep-workspace
+```
+```bash
 git add .
-git commit -m 'Testing the sample notebook'
+```
+```bash
+git commit -m "Exercises for Week <week number>"
+```
+```bash
 git push
 ```
 
-* Now type your git username, then press <kbd>enter</kbd>
-* Then type your git password , then press <kbd>enter</kbd>
-* You're all set!
+You'll be asked for your password - enter it and press <kbd>enter</kbd>. Type your git password and press <kbd>enter</kbd>.
+
+- **Note**: You'll be learning all about `git add`, `git commit` and `git push` during the Prep Course. For now, just know that these are the necessary steps for you to save your work to your remote repository `ds-prep-workspace`.
+
+
+
 
 <br>
 
@@ -527,12 +464,18 @@ We understand it's not ideal and are working on improving this workflow.
 
 ## **4. Help**
 
-### 4.1 How to ask for help
+<br>
+
+
+### **4.1 How to ask for help**
 
 During the Prep Course you will surely run into problems and have questions about the materials.
 Please refer to [this wiki page](https://github.com/LDSSA/wiki/wiki/Data-Science-Prep-Course#how-to-ask-for-help) on how to ask for help!
 
-### 4.2 Troubleshooting
+<br>
+
+
+### **4.2 Troubleshooting**
 
 1. [When I open Windows Explorer through Ubuntu, it goes to a different folder than in the guide](#When-I-open-Windows-Explorer-through-Ubuntu,-it-goes-to-a-different-folder-than-in-the-guide)
 1. [Tips and Tricks](#Tips-and-Tricks)
@@ -540,18 +483,18 @@ Please refer to [this wiki page](https://github.com/LDSSA/wiki/wiki/Data-Science
 1. [When I try to open `jupyter notebook`, I get an error](#When-I-try-to-open-jupyter-notebook,-I-get-the-error)
 1. [When I use the `cp` command the `>` sign appears and the command does not execute](#When-I-use-the-`cp`-command-the->-sign-appears-and-the-command-does-not-execute)
 
-#### When I open Windows Explorer through Ubuntu, it goes to a different folder than in the guide
+#### ___1. When I open Windows Explorer through Ubuntu, it goes to a different folder than in the guide___
 
 * Please make sure:
     * you are running the command `explorer.exe .` including the dot at the end.
     * you are running Windows 10 version `1909` or newer.
 
-#### Ubuntu on Windows 10 high CPU usage, crashes
+#### ___2. Ubuntu on Windows 10 high CPU usage, crashes___
 
 * First please make sure you are running Windows 10 version `1909` or newer.
 * Then, try following [these steps](https://teckangaroo.com/enable-windows-10-virtual-machine-platform/)
 
-#### When I pull from the `ds-prep-course-2021` repository, I get the error:
+#### ___When I pull from the `ds-prep-course-2021` repository, I get an error___
 
 ```
 error: Your local changes to the following files would be overwritten by merge:  
@@ -575,7 +518,7 @@ _git_ is telling us that changes were made by you to the files on the `~/project
     git pull
     ```
 
-#### When I try to open `jupyter notebook`, I get the error:
+#### ___When I try to open `jupyter notebook`, I get the error___
 
 ```
 migs-MBP% jupyter notebook
@@ -588,7 +531,7 @@ Before opening `jupyter notebook` activate your virtual environment:
 source ~/.virtualenvs/prep-venv/bin/activate
 ```
 
-#### When I use the `cp` command the `>` sign appears and the command does not execute
+#### ___When I use the `cp` command the `>` sign appears and the command does not execute___
 
 ```
 cp -r ~/projects/ds-prep-course-2021/“Week 0" ds-prep-workspace
@@ -597,18 +540,22 @@ cp -r ~/projects/ds-prep-course-2021/“Week 0" ds-prep-workspace
 
 Make sure to use this type of quotes `"` and not these ones `“`.
 
-#### My problem is not listed here, what should I do?
+#### ___My problem is not listed here, what should I do?___
 
 If the above steps didn't solve the problem for you, please contact us on Slack or if you are not on slack, [open an issue](https://guides.github.com/features/issues/)
 
-### 4.3 Tips and Tricks
+<br>
+
+
+### **4.3 Tips and Tricks**
 
 Coming soon.
 
+<br>
 
-## 5. Videos
+## **5. Tutorial videos**
 
-You can find here some video guides that follow this setup:
+You can find here some video guides that follow the setup made for the Prep Course (2020):
 
 * [Setup guide for Windows - Part 1](https://www.youtube.com/watch?v=fWi3bYoHW18)
 * [Setup guide for Windows - Part 2](https://www.youtube.com/watch?v=bnJOQHh9pJ4)
