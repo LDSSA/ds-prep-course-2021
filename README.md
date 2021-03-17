@@ -108,7 +108,7 @@ _Homebrew_ will make it easier to install software that we'll use later on.
 
 ### **1.2 Setup _Git_ and _GitHub_**
 
-**Git** is a distributed version-control system for tracking changes in source  code. A **repository** is where code lives, and the code from the prep course will live at [`ds-prep-course-2021`](https://github.com/LDSSA/ds-prep-course-2021) repository. This is where the learning materials and exercises will be released (made available).
+**Git** is a distributed version-control system for tracking changes in source  code. A **repository** is where code lives, and the code from the prep course will live at [`ds-prep-course-2021`](https://github.com/LDSSA/ds-prep-course-2021) repository (basically where you are right now, reading this). All the learning materials and exercises will be released (made available) on this repository.
 
 **Step 1:** Install Git
 
@@ -123,13 +123,11 @@ brew install git
 ```
 <br>
 
-**Step 2:** Create a _GitHub_ account
-
-[Sign up](https://github.com/join) for a _GitHub_ account and follow the instructions.
+**Step 2:** [Sign up](https://github.com/join) for a _GitHub_ account and follow the instructions.
 
 <br>
 
-**Step 3:** Open an Ubuntu terminal. We'll configure your email and username by running the 3 commands below. **Replace** `mig.dias.1212@gmail.com` below with your email and `buedaswag` with your GitHub handle (username).
+**Step 3:** Open an Ubuntu terminal. Configure your email and username by running the 3 commands below. (**replace** `mig.dias.1212@gmail.com` below with your email and `buedaswag` with your GitHub username).
 
 ```bash
 git config --global user.email "mig.dias.1212@gmail.com"
@@ -142,7 +140,7 @@ git config --global user.name "Bueda Swag"
 ### **1.3 Setup your Workspace Repository**
 
 The workspace directory/repository is where you will place everything you
-are working on, where you will make changes to files, write code, etc.
+are working on, solve exercises, make changes to files, etc.
 
 <br>
 
@@ -156,7 +154,7 @@ are working on, where you will make changes to files, write code, etc.
 
 ![Create Repository](assets/menu_create_repository.png "Create Repository")
 
-**Step 3:** Create a new **private** repository called *ds-prep-workspace*. 
+**Step 3:** Create a new **private** repository called `ds-prep-workspace`. 
 
 1. You need to explicitly select Private - This is your private work environment. 
 
@@ -164,7 +162,7 @@ are working on, where you will make changes to files, write code, etc.
 
 1. Add a Python `.gitignore`.
 
-![Create Repository](assets/create_repository.png "Create Repository")
+    ![Create Repository](assets/create_repository.png "Create Repository")
 
 You can also check
 [Creating a new repository](https://help.github.com/en/articles/creating-a-new-repository) on GitHub for help.
@@ -188,9 +186,7 @@ mkdir ~/projects
 cd ~/projects
 ```
 
-**Step 3:** You can now **clone** the `ds-prep-workspace` repository you created on GitHub by using the `git clone` command:
-
- _**Note:** Replace `<username>` below with your github username._
+**Step 3:** You can now **clone** the `ds-prep-workspace` repository you created on GitHub (replace `<username>` below with your github username) by running the command:
 
 ```bash
 git clone https://github.com/<username>/ds-prep-workspace.git
@@ -202,7 +198,7 @@ You should now have a local copy of your `ds-prep-workspace` in your `~/projects
 
 <br>
 
-_By August 13, 2021, the username+password authentication [will no longer be supported](https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/)._
+**Note:** _By August 13, 2021, the username+password authentication [will no longer be supported](https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/)._
 
 <br>
 
@@ -269,9 +265,9 @@ brew install python
 
 ### **1.6 Creating a virtual environment**
 
-Before you work on a learning unit, you'll need to activate a [**virtual environment**](https://realpython.com/python-virtual-environments-a-primer/#what-is-a-virtual-environment). By using a virtual environment, you ensure that you have a stable and compatible set of Python packages. Don't work outside a virtual environment. Don't say we didn't warn you.
+Before you work on a learning unit, you'll need to activate a [**virtual environment**](https://realpython.com/python-virtual-environments-a-primer/#what-is-a-virtual-environment). By using a virtual environment, you ensure that you have a stable and compatible set of Python packages. You should not work outside a virtual environment. Don't say we didn't warn you.
 
-For this Prep Course we will use the same environment throughout, since we won't need too many packages. In the LDSSA though, you'll be creating new environments as each learning unit is released.
+On the Prep Course we will use the same environment throughout. As a data scientist though, you'll probably create different environments for different purposes or projects.
 
 **Step 1:** Start by ensuring `pip`, `setuptools`, and `wheel` are up to date:
 
@@ -290,22 +286,19 @@ source ~/.virtualenvs/prep-venv/bin/activate
 ```
 
 After you activate your virtual environment you should see at the leftmost of your command line the name of your virtual environment surrounded by parenthesis, like this:
-
-```bash
-(prep-venv) mig@macbook-pro %
-```
+> `(prep-venv) mig@macbook-pro %`
 
 **Step 4:** Finally, don't forget to update `pip`.
 ```bash
 pip install -U pip
 ```
 
-You can also follow [this guide](guides/How_to_set_up_python_virtual_environments.md) for a more in depth set of instructions that accomplish exactly the same thing.
+You could also follow [this guide](guides/How_to_set_up_python_virtual_environments.md) if you're looking for a more in depth set of instructions.
 
 <br>
 
 ### **1.7 Testing the workflow**
-Finally, test the workflow ([next section](#2-learning-unit-workflow)) on `"Week 0"`. After that you'll be officially ready to start the course! This folder is used to give instructors guidelines to produce the learning units. We are also using it to ensure that you are able to run and submit a learning unit.
+Finally, test the workflow ([next section](#2-learning-unit-workflow)) on `"Week 0"` before April 5. This folder is used to give instructors guidelines to produce the learning units. We are also using it to ensure that you are able to run and submit a learning unit.
 
 
 <br>
@@ -314,42 +307,49 @@ Finally, test the workflow ([next section](#2-learning-unit-workflow)) on `"Week
 
 ## **2. Learning Unit Workflow**
 
-**Each week** a new folder is released on [`ds-prep-course-2021`](https://github.com/LDSSA/ds-prep-course-2021) repository. On week 1 (April 5 - April 11), the folder released will be called `"Week 1"`. On week 2, it will be called `"Week 2"`, and so on. These folders contain the learning units you'll be working on. The releases will be announced on Slack, on the ___#announcements___ channel.
+**Each week** a new folder is released on [`ds-prep-course-2021`](https://github.com/LDSSA/ds-prep-course-2021) repository. On week 1 (April 5 - April 11), the folder released will be `"Week 1"`. On week 2, it will be called `"Week 2"`, and so on. These folders contain the learning units you'll be working on. The releases will be announced on Slack, on the ___#announcements___ channel.
 
 <br>
 
 ### **2.1 Weekly Setup - Get the learning materials**
 
-⚠️ **Very Important**: *This section is to be done **one and one time only each week**. Otherwise you may risk overwriting your work. Each time you copy one folder to another in Ubuntu, the destination will be overwritten, no questions asked.*
+This section only needs to be done **ONCE for each week**. It is about getting the materials, copying them to your local workspace and adding new packages to your virtual environment.
+
 <br>
 
-Run the following on a terminal:
+1. Run the following on a terminal:
+    ```bash
+    cd ~/projects/ds-prep-course-2021/
+    ```
+    ```bash
+    git pull
+    ```
 
-```bash
-cd ~/projects/ds-prep-course-2021/
-```
-```bash
-git pull
-```
-```bash
-cp -r ~/projects/ds-prep-course-2021/"Week <week number>" ~/projects/ds-prep-workspace/
-``` 
+    **⚠️ Be careful before running the command below!** - If `"Week <week number>"` already exists on the destination folder, it will be replaced.
+    ```bash
+    cp -r ~/projects/ds-prep-course-2021/"Week <week number>" ~/projects/ds-prep-workspace/
+    ``` 
 
-If you're curious about how you could this using your OS GUI [check this guide](guides/using_os_gui_to_manage_directories.md)
+- If you're curious about how you could this using your OS GUI [check this guide](guides/using_os_gui_to_manage_directories.md)
 
-Activate the `prep-venv` environment you created on the Initial Setup:
-```bash
-source ~/.virtualenvs/prep-venv/bin/activate
-```
-Install the python packages from `requirements.txt` for each learning unit (there are multiple learning units (SLU's) in a Week!):
-```bash
-pip install -r ~/projects/ds-prep-workspace/"Week <week number>"/"<SLU name>"/requirements.txt
-```
+<br>
 
-**Example:** For Week 0 you'd do:
-```bash
-pip install -r ~/projects/ds-prep-workspace/"Week 0"/"SLU00 - Jupyter Notebook"/requirements.txt
-```
+2. Activate the `prep-venv` environment you created on the Initial Setup:
+    ```bash
+    source ~/.virtualenvs/prep-venv/bin/activate
+    ```
+
+<br>
+
+3. Install the python packages from `requirements.txt` for each learning unit (there are multiple learning units (SLU's) in a Week!):
+    ```bash
+    pip install -r ~/projects/ds-prep-workspace/"Week <week number>"/"<SLU name>"/requirements.txt
+    ```
+
+    **Example:** For Week 0 you'd do:
+    ```bash
+    pip install -r ~/projects/ds-prep-workspace/"Week 0"/"SLU00 - Jupyter Notebook"/requirements.txt
+    ```
 
 <br>
 
