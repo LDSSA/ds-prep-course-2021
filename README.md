@@ -397,9 +397,13 @@ Make sure you open and go through the Learning Notebook(s) first.
     - Once you've solved all of the exercises we recommend following this simple checklist to avoid unexpected surprises:
         1. Save the notebook (again)
         2. Run "Restart & Run All"
-        ![Restart & Run All](assets/jupyter_clear_and_run.png "Restart & Run All")
+
+            ![Restart & Run All](assets/jupyter_clear_and_run.png)
+
         3. At this point the notebook should have run without any error messages showing up.
-<img src='assets/terminal_notebook.png' alt='Sample learning unit' width="70%"/>
+            
+            ![terminal notebook](assets/terminal_notebook.png)
+            
         4. Close the browser and the terminal.
 
 <br>
