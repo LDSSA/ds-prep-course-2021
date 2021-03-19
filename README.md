@@ -19,7 +19,7 @@ Follow these steps to make sure your machine is ready **before** the course star
 
 1. [Initial Setup](#1-initial-setup)
 
-    1.1 (a) [Windows Setup](#11a-Windows-Setup)
+    1.1 (a) [Windows 10 Setup](#11a-Windows-10-Setup)
           (b) [MacOS Setup](#11b-macos-setup)
 
     1.2 [Setup Git and GitHub](#12-setup-git-and-github)
@@ -30,26 +30,26 @@ Follow these steps to make sure your machine is ready **before** the course star
 
     1.5 [Installing Python 3.7 and all necessary packages](#15-installing-python-37-and-all-necessary-packages)
 
-    1.6 [Testing the workflow](#16-testing-the-workflow)
+    1.6 [Creating a virtual environment](#16-creating-a-virtual-environment)
+
+    1.7 [Follow the learning unit workflow for Week 0](#17-testing-the-workflow)
 
 
 ### **Weekly workflow**
 
 2. [Learning Unit Workflow](#2-learning-unit-workflow)
 
-3. [Working on the learning units](#2-working-on-the-learning-units)
-
-4. [Updates to Learning Units](#4-updates-to-learning-units)
+3. [Updates to Learning Units](#3-updates-to-learning-units)
 
 ### **Help**
 
-5. [How to ask for help](#5-how-to-ask-for-help)
+4. [How to ask for help](#4-how-to-ask-for-help)
 
-6. [Troubleshooting](#6-Troubleshooting)
+5. [Troubleshooting](#6-Troubleshooting)
     
-7. [Tips and Tricks](#7-Tips-and-Tricks)
+6. [Tips and Tricks](#7-Tips-and-Tricks)
 
-8. [Tutorial videos from Prep Course 2020](#8-tutorial-videos)
+7. [Tutorial videos from Prep Course 2020](#8-tutorial-videos)
 
 <br>
 
@@ -212,6 +212,7 @@ _Remember that by August 13, 2021, the username+password authentication [will no
 Let's clone the [`ds-prep-course-2021`](https://github.com/LDSSA/ds-prep-course-2021) repository, [just like we did](#132-cloning-the-workspace) for `ds-prep-workspace`. This is where all of the learning materials will be made available, as the academy progresses.
 
 **Step 1:** Open a terminal (or use one you've already opened) and enter the `projects` folder:
+
 ```bash
 cd ~/projects
 ```
@@ -247,9 +248,9 @@ python3 --version
 ```bash
 sudo apt update && sudo apt upgrade && sudo apt install python3-pip python3-venv
 ```
-**Why do we install these?**
-- we'll be using `pip` which is the reference Python package manager;
-- you should always use a virtual environment to install python packages. We'll use `venv` to set them up.
+>**Why do we install these?**
+>
+> We'll be using `pip` which is the reference Python package manager. You should always use a virtual environment to install python packages. We'll use `venv` to set them up.
 
 <br>
 
@@ -454,20 +455,17 @@ We understand it's not ideal and are working on improving this workflow.
 
 <br>
 
-## **4. Help**
-
-<br>
-
-
-### **4.1 How to ask for help**
+## **4. How to ask for help**
 
 During the Prep Course you will surely run into problems and have questions about the materials.
 Please refer to [this wiki page](https://github.com/LDSSA/wiki/wiki/Data-Science-Prep-Course#how-to-ask-for-help) on how to ask for help!
 
+You can contact us on Slack or, alternatively, [open an issue](https://github.com/LDSSA/ds-prep-course-2021/issues/).
+
 <br>
 
 
-### **4.2 Troubleshooting**
+## **5. Troubleshooting**
 
 1. [When I open Windows Explorer through Ubuntu, it goes to a different folder than in the guide](#When-I-open-Windows-Explorer-through-Ubuntu,-it-goes-to-a-different-folder-than-in-the-guide)
 1. [Tips and Tricks](#Tips-and-Tricks)
@@ -475,18 +473,18 @@ Please refer to [this wiki page](https://github.com/LDSSA/wiki/wiki/Data-Science
 1. [When I try to open `jupyter notebook`, I get an error](#When-I-try-to-open-jupyter-notebook,-I-get-the-error)
 1. [When I use the `cp` command the `>` sign appears and the command does not execute](#When-I-use-the-`cp`-command-the->-sign-appears-and-the-command-does-not-execute)
 
-#### ___1. When I open Windows Explorer through Ubuntu, it goes to a different folder than in the guide___
+### ___1. When I open Windows Explorer through Ubuntu, it goes to a different folder than in the guide___
 
 * Please make sure:
     * you are running the command `explorer.exe .` including the dot at the end.
     * you are running Windows 10 version `1909` or newer.
 
-#### ___2. Ubuntu on Windows 10 high CPU usage, crashes___
+### ___2. Ubuntu on Windows 10 high CPU usage, crashes___
 
 * First please make sure you are running Windows 10 version `1909` or newer.
 * Then, try following [these steps](https://teckangaroo.com/enable-windows-10-virtual-machine-platform/)
 
-#### ___When I pull from the `ds-prep-course-2021` repository, I get an error___
+### ___3. When I pull from the `ds-prep-course-2021` repository, I get an error___
 
 ```
 error: Your local changes to the following files would be overwritten by merge:  
@@ -510,7 +508,7 @@ _git_ is telling us that changes were made by you to the files on the `~/project
     git pull
     ```
 
-#### ___When I try to open `jupyter notebook`, I get the error___
+### ___4. When I try to open `jupyter notebook`, I get the error___
 
 ```
 migs-MBP% jupyter notebook
@@ -523,7 +521,7 @@ Before opening `jupyter notebook` activate your virtual environment:
 source ~/.virtualenvs/prep-venv/bin/activate
 ```
 
-#### ___When I use the `cp` command the `>` sign appears and the command does not execute___
+### ___5. When I use the `cp` command the `>` sign appears and the command does not execute___
 
 ```
 cp -r ~/projects/ds-prep-course-2021/“Week 0" ds-prep-workspace
@@ -532,20 +530,17 @@ cp -r ~/projects/ds-prep-course-2021/“Week 0" ds-prep-workspace
 
 Make sure to use this type of quotes `"` and not these ones `“`.
 
-#### ___My problem is not listed here, what should I do?___
-
-If the above steps didn't solve the problem for you, please contact us on Slack or if you are not on slack, [open an issue](https://guides.github.com/features/issues/)
 
 <br>
 
 
-### **4.3 Tips and Tricks**
+### **6. Tips and Tricks**
 
 Coming soon.
 
 <br>
 
-## **5. Tutorial videos**
+## **7. Tutorial videos**
 
 You can find here some video guides that follow the setup made for the Prep Course (2020):
 
