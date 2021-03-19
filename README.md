@@ -467,25 +467,26 @@ You can contact us on Slack or, alternatively, [open an issue](https://github.co
 
 ## **5. Troubleshooting**
 
-1. [When I open Windows Explorer through Ubuntu, it goes to a different folder than in the guide](#When-I-open-Windows-Explorer-through-Ubuntu,-it-goes-to-a-different-folder-than-in-the-guide)
-1. [Tips and Tricks](#Tips-and-Tricks)
-1. [When I pull from the `ds prep course` repository, I get an error](#When-I-pull-from-the-ds-prep-course-2021-repository,-I-get-the-error)
-1. [When I try to open `jupyter notebook`, I get an error](#When-I-try-to-open-jupyter-notebook,-I-get-the-error)
-1. [When I use the `cp` command the `>` sign appears and the command does not execute](#When-I-use-the-`cp`-command-the->-sign-appears-and-the-command-does-not-execute)
+1. [When I open Windows Explorer through Ubuntu, it goes to a different folder than in the guide](#1-When-I-open-Windows-Explorer-through-Ubuntu,-it-goes-to-a-different-folder-than-in-the-guide)
+1. [Ubuntu on Windows 10 high CPU usage, crashes](#2-ubuntu-on-windows-10-high-cpu-usage,-crashes)
+1. [When I pull from the `ds prep course-2021` repository, I get an error](#3-When-I-pull-from-the-ds-prep-course-2021-repository,-I-get-an-error)
+1. [When I try to open `jupyter notebook`, I get an error](#4-When-I-try-to-open-jupyter-notebook,-I-get-an-error)
+1. [When I use the `cp` command the `>` sign appears and the command does not execute](#5-When-I-use-the-`cp`-command-the->-sign-appears-and-the-command-does-not-execute)
 
 ### ___1. When I open Windows Explorer through Ubuntu, it goes to a different folder than in the guide___
 
-* Please make sure:
-    * you are running the command `explorer.exe .` including the dot at the end.
-    * you are running Windows 10 version `1909` or newer.
+Please make sure:
+* you are running the command `explorer.exe .` including the dot at the end.
+* you are running Windows 10 version `1909` or newer.
 
 ### ___2. Ubuntu on Windows 10 high CPU usage, crashes___
 
-* First please make sure you are running Windows 10 version `1909` or newer.
+* Make sure you are running Windows 10 version `1909` or newer.
 * Then, try following [these steps](https://teckangaroo.com/enable-windows-10-virtual-machine-platform/)
 
 ### ___3. When I pull from the `ds-prep-course-2021` repository, I get an error___
 
+If you get an error like the following when pulling:
 ```
 error: Your local changes to the following files would be overwritten by merge:  
 <some files>
@@ -493,29 +494,30 @@ Please commit your changes or stash them before you merge.
 Aborting
 ```
 
-_git_ is telling us that changes were made by you to the files on the `~/projects/ds-prep-course-2021` folder, and is not pulling the changes made by the instructors because they would override the changes that you made there. To fix this do the following:
-1. make sure that any change you made to the files on `~/projects/ds-prep-course-2021`  (that you want to not lose) is saved in your `~/projects/ds-prep-workspace` repository (see https://github.com/LDSSA/ds-prep-course-2021#updates-to-learning-units for how to do this), and if you don't want to keep the changes you made to these files, just continue on to the next step
-2. go to the `~/projects/ds-prep-course-2021` folder and run: 
+what _git_ is telling you is that changes were made by you to the files on the `~/projects/ds-prep-course-2021` folder, and is not pulling the changes made by the instructors because they would override the changes that you made there.
 
+To fix this do the following:
+
+1. Make sure that any change you made to the files on `~/projects/ds-prep-course-2021`  (that you don't want to lose) is saved in your `~/projects/ds-prep-workspace` repository (refer to [Updates to Learning Units](#3-updates-to-learning-units) on how to do this), and if you don't want to keep the changes you made to these files, just continue on to the next step;
+2. Go to the `~/projects/ds-prep-course-2021` folder and run: 
     ```
     cd ~/projects/ds-prep-course-2021
     git stash
     ```
-
-3. now you can pull from the `ds-prep-course-2021` repository:
-
+3. Now you can pull from the `ds-prep-course-2021` repository:
     ```
     git pull
     ```
 
-### ___4. When I try to open `jupyter notebook`, I get the error___
+### ___4. When I try to open `jupyter notebook`, I get an error___
 
+If you get this error when trying to open a notebook:
 ```
 migs-MBP% jupyter notebook
 zsh: command not found: jupyter
 ```
 
-Before opening `jupyter notebook` activate your virtual environment:
+make sure to activate your virtual environment **before** opening `jupyter notebook`:
 
 ```
 source ~/.virtualenvs/prep-venv/bin/activate
@@ -534,7 +536,7 @@ Make sure to use this type of quotes `"` and not these ones `“`.
 <br>
 
 
-### **6. Tips and Tricks**
+## **6. Tips and Tricks**
 
 Coming soon.
 
