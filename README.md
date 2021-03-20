@@ -154,7 +154,7 @@ are working on, solve exercises, make changes to files, etc.
 
 **Step 2:** In the upper-right corner of the page, click the "+" button and select `New repository`:
 
-![Create Repository](assets/menu_create_repository.png "Create Repository")
+<img src='assets/menu_create_repository.png' alt='Finder' width="75%" />
 
 **Step 3:** Create a new **private** repository called `ds-prep-workspace`. 
 
@@ -164,7 +164,7 @@ are working on, solve exercises, make changes to files, etc.
 
 1. Add a Python `.gitignore`.
 
-    ![Create Repository](assets/create_repository.png "Create Repository")
+<img src='assets/create_repository.png' alt='Finder' width="75%" />
 
 You can also check
 [Creating a new repository](https://help.github.com/en/articles/creating-a-new-repository) on GitHub for help.
@@ -202,7 +202,7 @@ You should now have a local copy of your `ds-prep-workspace` in your `~/projects
 
 **Note:** If you already have a Github account and you happen to have 2FA enabled, you need an extra step and simply inputting your password will not work. In this case, you can go to https://github.com/settings/tokens, click on `Generate new token`. You can give it a name in the note field, such as `ldsa-token`. Then select `repo` in the scopes and click on `Generate token`. You will be prompted with a code that you should save (you will not be able to see it again after leaving that window). Now use this code instead of your password when cloning your repo.
 
-<img src='assets/personal_access_token.PNG' width="56%" />
+<img src='assets/personal_access_token.PNG' width="75%" />
 
 _Remember that by August 13, 2021, the username+password authentication [will no longer be supported](https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/)._
 
@@ -328,7 +328,7 @@ This section only needs to be done **ONCE for each week**. It is about getting t
     git pull
     ```
 
-    **⚠️ Be careful before running the command below!** - If `"Week <week number>"` already exists on the destination folder, it will be replaced.
+    **⚠️ Before running the command below:** - If `"Week <week number>"` already exists on the destination folder, it will be replaced, so make sure you do this **once** and before starting to work on the exercises.
     ```bash
     cp -r ~/projects/ds-prep-course-2021/"Week <week number>" ~/projects/ds-prep-workspace/
     ``` 
