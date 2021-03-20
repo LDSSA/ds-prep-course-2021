@@ -9,7 +9,9 @@ Your first step in this journey is to **carefully read** the steps in this tutor
 <br>
 
 
-## 📌 _Check all "#TODO"s before PR._
+```
+Check all "#TODO"s before release
+```
 
 # Prep Course Tutorial
 
@@ -89,7 +91,7 @@ Some of the steps in the following sections will require _Homebrew_ for MacOS.
 _Homebrew_ will make it easier to install software that we'll use later on.  
 
 **Step 1:** To open the terminal, choose one:
-* In Finder <img src='assets/finder.png' alt='Finder' width="2%" />, open the /Applications/Utilities folder, then double-click Terminal.
+* In Finder <img src='assets/finder.png' alt='Finder' width="4%" />, open the /Applications/Utilities folder, then double-click Terminal.
 * By pressing <kbd>cmd</kbd> + <kbd>space</kbd> then type `terminal` and press <kbd>enter</kbd>.
 
     The terminal should now be open:
@@ -200,7 +202,7 @@ You should now have a local copy of your `ds-prep-workspace` in your `~/projects
 
 **Note:** If you already have a Github account and you happen to have 2FA enabled, you need an extra step and simply inputting your password will not work. In this case, you can go to https://github.com/settings/tokens, click on `Generate new token`. You can give it a name in the note field, such as `ldsa-token`. Then select `repo` in the scopes and click on `Generate token`. You will be prompted with a code that you should save (you will not be able to see it again after leaving that window). Now use this code instead of your password when cloning your repo.
 
-![patoken](assets/personal_access_token.PNG)
+<img src='assets/personal_access_token.PNG' width="56%" />
 
 _Remember that by August 13, 2021, the username+password authentication [will no longer be supported](https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/)._
 
