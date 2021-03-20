@@ -477,18 +477,18 @@ You can contact us on Slack or, alternatively, [open an issue](https://github.co
 1. [When I try to open `jupyter notebook`, I get an error](#4-When-I-try-to-open-jupyter-notebook,-I-get-an-error)
 1. [When I use the `cp` command the `>` sign appears and the command does not execute](#5-When-I-use-the-`cp`-command-the->-sign-appears-and-the-command-does-not-execute)
 
-### ___1. When I open Windows Explorer through Ubuntu, it goes to a different folder than in the guide___
+#### ___1. When I open Windows Explorer through Ubuntu, it goes to a different folder than in the guide___
 
 Please make sure:
 * you are running the command `explorer.exe .` including the dot at the end.
 * you are running Windows 10 version `1909` or newer.
 
-### ___2. Ubuntu on Windows 10 high CPU usage, crashes___
+#### ___2. Ubuntu on Windows 10 high CPU usage, crashes___
 
 * Make sure you are running Windows 10 version `1909` or newer.
 * Then, try following [these steps](https://teckangaroo.com/enable-windows-10-virtual-machine-platform/)
 
-### ___3. When I pull from the `ds-prep-course-2021` repository, I get an error___
+#### ___3. When I pull from the `ds-prep-course-2021` repository, I get an error___
 
 If you get an error like the following when pulling:
 ```
@@ -513,7 +513,7 @@ To fix this do the following:
     git pull
     ```
 
-### ___4. When I try to open `jupyter notebook`, I get an error___
+#### ___4. When I try to open `jupyter notebook`, I get an error___
 
 If you get this error when trying to open a notebook:
 ```
@@ -527,7 +527,7 @@ make sure to activate your virtual environment **before** opening `jupyter noteb
 source ~/.virtualenvs/prep-venv/bin/activate
 ```
 
-### ___5. When I use the `cp` command the `>` sign appears and the command does not execute___
+#### ___5. When I use the `cp` command the `>` sign appears and the command does not execute___
 
 ```
 cp -r ~/projects/ds-prep-course-2021/“Week 0" ds-prep-workspace
