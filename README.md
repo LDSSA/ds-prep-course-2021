@@ -3,15 +3,11 @@
 Welcome to the Data Science Prep Course repository! 🧑‍💻
 
 Your first step in this journey is to **carefully read** the steps in this tutorial. You'll learn:
+
 - How to set up your environment;
 - The weekly workflow to follow during the Prep Course.
 
 <br>
-
-
-```
-Check all "#TODO"s before release
-```
 
 # Prep Course Tutorial
 
@@ -48,7 +44,7 @@ Follow these steps to make sure your machine is ready **before** the course star
 4. [How to ask for help](#4-how-to-ask-for-help)
 
 5. [Troubleshooting](#6-Troubleshooting)
-    
+
 6. [Tips and Tricks](#7-Tips-and-Tricks)
 
 7. [Tutorial videos from Prep Course 2020](#8-tutorial-videos)
@@ -88,7 +84,7 @@ Follow **[this guide](guides/Windows_Subsystem_for_Linux_Installation_Guide_for_
 ### **1.1(b) MacOS Setup**
 
 Some of the steps in the following sections will require _Homebrew_ for MacOS.
-_Homebrew_ will make it easier to install software that we'll use later on.  
+_Homebrew_ will make it easier to install software that we'll use later on.
 
 **Step 1:** To open the terminal, choose one:
 * In Finder <img src='assets/finder.png' alt='Finder' width="4%" />, open the /Applications/Utilities folder, then double-click Terminal.
@@ -156,11 +152,11 @@ are working on, solve exercises, make changes to files, etc.
 
 <img src='assets/menu_create_repository.png' alt='Finder' width="75%" />
 
-**Step 3:** Create a new **private** repository called `ds-prep-workspace`. 
+**Step 3:** Create a new **private** repository called `ds-prep-workspace`.
 
-1. You need to explicitly select Private - This is your private work environment. 
+1. You need to explicitly select Private - This is your private work environment.
 
-1. Initialize with a README. 
+1. Initialize with a README.
 
 1. Add a Python `.gitignore`.
 
@@ -245,12 +241,12 @@ python3 --version
 **Step 2:** If your version is not `Python 3.7.x` (`x` = any number), run the following to install _Python 3.7_:
 
 ```bash
-#TODO - install steps Python 3.7
+sudo add-apt-repository ppa:deadsnakes/ppa -y && sudo apt update && sudo apt install python3.7 -y
 ```
 
 **Step 3** Run the following command to get `pip` and `venv`:
 ```bash
-sudo apt update && sudo apt upgrade && sudo apt install python3-pip python3-venv
+sudo apt update && sudo apt upgrade && sudo apt install python3-pip python3.7-venv -y
 ```
 >**Why do we install these?**
 >
@@ -263,9 +259,9 @@ sudo apt update && sudo apt upgrade && sudo apt install python3-pip python3-venv
 <br>
 
 If you are using **Mac OS** you will need to install python, this can be done in a terminal by running:
+
 ```bash
-brew install python
-#TODO - Install Python 3.7 and setup packages in Mac OS
+brew update --verbose && brew install python@3.7 && brew link python@3.7
 ```
 
 ### **1.6 Creating a virtual environment**
@@ -279,6 +275,7 @@ python3.7 -m pip install --user --upgrade pip setuptools wheel
 ```
 
 **Step 2:** Create a virtual environment with the name `prep-venv`:
+
 ```bash
 python3.7 -m venv ~/.virtualenvs/prep-venv
 ```
@@ -292,17 +289,15 @@ After you activate your virtual environment you should see at the leftmost of yo
 > `(prep-venv) mig@macbook-pro %`
 
 **Step 4:** Last but not least, don't forget to update `pip`.
+
 ```bash
 pip install -U pip
 ```
-
-You could also follow [this guide](guides/How_to_set_up_python_virtual_environments.md) if you're looking for a more in depth set of instructions.
 
 <br>
 
 ### **1.7 Testing the workflow**
 Finally, test the workflow ([next section](#2-learning-unit-workflow)) on `"Week 0"` before April 5. This folder is used to give instructors guidelines to produce the learning units. We are also using it to ensure that you are able to run and submit a learning unit.
-
 
 <br>
 
@@ -331,7 +326,7 @@ This section only needs to be done **ONCE for each week**. It is about getting t
     **⚠️ Before running the command below:** - If `"Week <week number>"` already exists on the destination folder, it will be replaced, so make sure you do this **once** and before starting to work on the exercises.
     ```bash
     cp -r ~/projects/ds-prep-course-2021/"Week <week number>" ~/projects/ds-prep-workspace/
-    ``` 
+    ```
 
 - If you're curious about how you could this using your OS GUI [check this guide](guides/using_os_gui_to_manage_directories.md)
 
@@ -408,9 +403,9 @@ Make sure you open and go through the Learning Notebook(s) first.
             ![Restart & Run All](assets/jupyter_clear_and_run.png)
 
         3. At this point the notebook should have run without any error messages showing up.
-            
+
             ![terminal notebook](assets/terminal_notebook.png)
-            
+
         4. Close the browser and the terminal.
 
 <br>
@@ -450,7 +445,7 @@ If the correction is in the exercise notebook, however, you can't just replace t
 
 When a new version of the exercise notebook is released (and announced) you will have to merge the work you've already did into the new version of the notebook.
 
-At the moment our suggestion to merge the changes is: 
+At the moment our suggestion to merge the changes is:
 1. Rename the old version;
 1. Copy the new exercise notebook over;
 1. Open both and copy paste your solutions to the new notebook.
@@ -492,7 +487,7 @@ Please make sure:
 
 If you get an error like the following when pulling:
 ```
-error: Your local changes to the following files would be overwritten by merge:  
+error: Your local changes to the following files would be overwritten by merge:
 <some files>
 Please commit your changes or stash them before you merge.
 Aborting
@@ -503,42 +498,44 @@ what _git_ is telling you is that changes were made by you to the files on the `
 To fix this do the following:
 
 1. Make sure that any change you made to the files on `~/projects/ds-prep-course-2021`  (that you don't want to lose) is saved in your `~/projects/ds-prep-workspace` repository (refer to [Updates to Learning Units](#3-updates-to-learning-units) on how to do this), and if you don't want to keep the changes you made to these files, just continue on to the next step;
-2. Go to the `~/projects/ds-prep-course-2021` folder and run: 
-    ```
+2. Go to the `~/projects/ds-prep-course-2021` folder and run:
+
+    ```bash
     cd ~/projects/ds-prep-course-2021
     git stash
     ```
+
 3. Now you can pull from the `ds-prep-course-2021` repository:
-    ```
+
+    ```bash
     git pull
     ```
 
 #### ___4. When I try to open `jupyter notebook`, I get an error___
 
 If you get this error when trying to open a notebook:
-```
+
+```bash
 migs-MBP% jupyter notebook
 zsh: command not found: jupyter
 ```
 
 make sure to activate your virtual environment **before** opening `jupyter notebook`:
 
-```
+```bash
 source ~/.virtualenvs/prep-venv/bin/activate
 ```
 
 #### ___5. When I use the `cp` command the `>` sign appears and the command does not execute___
 
-```
+```bash
 cp -r ~/projects/ds-prep-course-2021/“Week 0" ds-prep-workspace
 >
 ```
 
 Make sure to use this type of quotes `"` and not these ones `“`.
 
-
 <br>
-
 
 ## **6. Tips and Tricks**
 
