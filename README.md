@@ -171,7 +171,7 @@ You can also check
 
 <br>
 
-**Step 1:** Open a terminal (or use one you've already opened)
+**Step 1:** Open a Ubuntu/MacOs terminal (or use one you've already opened)
 
 **Step 2:** Create a folder named `projects` by using the `mkdir` command:
 ```bash
