@@ -30,7 +30,7 @@ Follow these steps to make sure your machine is ready **before** the course star
 
     1.6 [Creating a virtual environment](#16-creating-a-virtual-environment)
 
-    1.7 [Follow the learning unit workflow for Week 0](#17-testing-the-workflow)
+    1.7 [Follow the learning unit workflow for Week 00](#17-testing-the-workflow)
 
 
 ### **Weekly workflow**
@@ -171,7 +171,7 @@ You can also check
 
 <br>
 
-**Step 1:** Open a terminal (or use one you've already opened)
+**Step 1:** Open a Ubuntu/MacOs terminal (or use one you've already opened)
 
 **Step 2:** Create a folder named `projects` by using the `mkdir` command:
 ```bash
@@ -297,7 +297,7 @@ pip install -U pip
 <br>
 
 ### **1.7 Testing the workflow**
-Finally, test the workflow ([next section](#2-learning-unit-workflow)) on `"Week 0"` before April 5. This folder is used to give instructors guidelines to produce the learning units. We are also using it to ensure that you are able to run and submit a learning unit.
+Finally, test the workflow ([next section](#2-learning-unit-workflow)) on `"Week 00"` before April 5. This folder is used to give instructors guidelines to produce the learning units. We are also using it to ensure that you are able to run and submit a learning unit.
 
 <br>
 
@@ -305,7 +305,7 @@ Finally, test the workflow ([next section](#2-learning-unit-workflow)) on `"Week
 
 ## **2. Learning Unit Workflow**
 
-**Each week** a new folder is released on [`ds-prep-course-2021`](https://github.com/LDSSA/ds-prep-course-2021) repository. On week 1 (April 5 - April 11), the folder released will be `"Week 1"`. On week 2, it will be called `"Week 2"`, and so on. These folders contain the learning units you'll be working on. The releases will be announced on Slack, on the ___#announcements___ channel.
+**Each week** a new folder is released on [`ds-prep-course-2021`](https://github.com/LDSSA/ds-prep-course-2021) repository. On week 1 (April 5 - April 11), the folder released will be `"Week 01"`. On week 02, it will be called `"Week 02"`, and so on. These folders contain the learning units you'll be working on. The releases will be announced on Slack, on the ___#announcements___ channel.
 
 <br>
 
@@ -344,9 +344,9 @@ This section only needs to be done **ONCE for each week**. It is about getting t
     pip install -r ~/projects/ds-prep-workspace/"Week <week number>"/"<SLU name>"/requirements.txt
     ```
 
-    **Example:** For Week 0 you'd do:
+    **Example:** For Week 00 you'd do:
     ```bash
-    pip install -r ~/projects/ds-prep-workspace/"Week 0"/"SLU00 - Jupyter Notebook"/requirements.txt
+    pip install -r ~/projects/ds-prep-workspace/"Week 00"/"SLU00 - Jupyter Notebook"/requirements.txt
     ```
 
 <br>
@@ -529,7 +529,7 @@ source ~/.virtualenvs/prep-venv/bin/activate
 #### ___5. When I use the `cp` command the `>` sign appears and the command does not execute___
 
 ```bash
-cp -r ~/projects/ds-prep-course-2021/“Week 0" ds-prep-workspace
+cp -r ~/projects/ds-prep-course-2021/“Week 00" ds-prep-workspace
 >
 ```
 
