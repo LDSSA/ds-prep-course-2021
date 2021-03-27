@@ -2,7 +2,7 @@
 
 ## Make sure that Windows is up to date
 
-1. Type "update" in your Windows search bar 
+1. Type "update" in your Windows search bar
 
 ![start](assets/start.png)
 
@@ -14,13 +14,15 @@ then download and install any updates that appear on the Windows Update menu (sh
 
 ![start](assets/windows_update.png)
 
-After you're done installing those updates, please [check which version of Windows 10 you are running](https://support.microsoft.com/en-us/help/13443/windows-which-version-am-i-running), and if your version number is smaller that `1909`, then please keep coming back to Windows Update and installing updates untill you have at least version `1909`. Then you may proceed with the guide.
+After you're done installing those updates, please [check which os build of Windows 10 you are running](https://support.microsoft.com/en-us/help/13443/windows-which-version-am-i-running), and if your os build number is smaller that `19041.XXX`, then please keep coming back to Windows Update and installing updates untill you have at least os build `19041.XXX`. Then you may proceed with the guide.
+
+![start](assets/os_build.png)
 
 ## Install the Windows Subsystem for Linux
 
 Before installing any Linux distros for WSL, you must ensure that the "Windows Subsystem for Linux" optional feature is enabled:
 
-1. Open PowerShell as Administrator by typing "PowerShell" in your Windows search bar 
+1. Open PowerShell as Administrator by typing "PowerShell" in your Windows search bar
 
 ![start](assets/start.png)
 
@@ -28,7 +30,7 @@ and then clicking "Run as Administrator"
 
 ![start](assets/open_powershell.png)
 
-2. Then paste the following command on PowerShell 
+2. Then paste the following command on PowerShell
 
 ```powershell
 Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
@@ -37,7 +39,6 @@ Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-L
 ![start](assets/paste_powershell.png)
 
 and run it by pressing <kbd>enter</kbd>:
-    
 
 3. Restart your computer if asked to.
 
@@ -47,7 +48,7 @@ and run it by pressing <kbd>enter</kbd>:
 
 
 ## Launch a distro
-To complete the initialization of your newly installed distro, launch a new instance. You can do this by typing "ubuntu" in your Windows search bar 
+To complete the initialization of your newly installed distro, launch a new instance. You can do this by typing "ubuntu" in your Windows search bar
 
 ![start](assets/start.png)
 
@@ -59,19 +60,21 @@ The first time a newly installed distro runs, a Console window will open, and yo
 
 ## Setting up a new Linux user account
 
-Once installation is complete, you will be prompted to create a new user account (and its password). 
+Once installation is complete, you will be prompted to create a new user account (and its password).
 
 ![Ubuntu unpacking in the Windows console](assets/UbuntuInstall.png)
 
 This user account is for the normal non-admin user that you'll be logged-in as by default when launching a distro.
 
-> You can choose any username and password you wish - they have no bearing on your Windows username. 
+> You can choose any username and password you wish - they have no bearing on your Windows username.
 
 When you open a new distro instance, you won't be prompted for your password, but **if you elevate a process using `sudo`, you will need to enter your password**, so make sure you choose a password you can easily remember!
 
 ## Opening the WSL terminal
 
-After that, whenever you want to use WSL, just type "ubuntu" in your Windows search bar 
+>⚠️ **Important**: From now on, every time we ask you to open a terminal, this is what you need to do. We'll refer to it as just "terminal" instead of "WSL terminal" or "Ubuntu terminal"
+
+Whenever you want to use WSL, just type "ubuntu" in your Windows search bar
 
 ![start](assets/start.png)
 
@@ -114,11 +117,11 @@ If you’d like to use Windows File Explorer to manipulate the files in WSL, jus
 ```console
 mig@DESKTOP-GKLQ11P:~$ explorer.exe .
 ```
+
 The Windows Explorer should pop up:
 
 ![start](assets/windows_explorer.png)
 
 Keep in mind that you should manipulate files and create directories inside your `Ubuntu-18.04/home/<your name>` folder.
-
 
 Don't forget to continue the [**Initial Setup**](/./README.md)!!
