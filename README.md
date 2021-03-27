@@ -18,7 +18,10 @@ Follow these steps to make sure your machine is ready **before** the course star
 1. [Initial Setup](#1-initial-setup)
 
     1.1 (a) [Windows 10 Setup](#11a-Windows-10-Setup)
-          (b) [MacOS Setup](#11b-macos-setup)
+
+    1.1 (b) [Ubuntu Setup](#11b-Ubuntu-Setup)
+
+    1.1 (c) [MacOS Setup](#11c-macos-setup)
 
     1.2 [Setup Git and GitHub](#12-setup-git-and-github)
 
@@ -26,12 +29,9 @@ Follow these steps to make sure your machine is ready **before** the course star
 
     1.4 [Clone the ds-prep-course-2021 repository](#14-clone-the-ds-prep-course-2021-repository)
 
-    1.5 [Installing Python 3.7 and all necessary packages](#15-installing-python-37-and-all-necessary-packages)
+    1.5 [Creating a virtual environment](#15-creating-a-virtual-environment)
 
-    1.6 [Creating a virtual environment](#16-creating-a-virtual-environment)
-
-    1.7 [Follow the learning unit workflow for Week 00](#17-testing-the-workflow)
-
+    1.6 [Follow the learning unit workflow for Week 00](#16-testing-the-workflow)
 
 ### **Weekly workflow**
 
@@ -64,24 +64,96 @@ using during the academy. Don't worry if you can't figure out what some of the c
 
 ⚠️ **Important**: You should complete this setup by April 5, as the course will begin on that day. If you are struggling to install any of the software mentioned below, tell us ASAP!
 
-📝 Once you complete the setup mark yourself as completed (Yes) on #TODO [this spreadsheet](???).
 
 <br>
 
 ### **1.1(a) Windows 10 Setup**
 
 This section deals with setting up Windows Subsystem for Linux (WSL) on Windows 10.
-If you are using MacOS or Linux, skip this section ([go to MacOS Setup](#11b-macos-setup)).
+If you are using Ubuntu, skip this section ([go to Ubuntu Setup](#11b-Ubuntu-Setup)).
+If you are using MacOS, skip this section ([go to MacOS Setup](#11c-macos-setup)).
+
+**Step 1:** Follow **[this guide](guides/Windows_Subsystem_for_Linux_Installation_Guide_for_Windows_10.md)** to setup WSL on Windows 10.
 
 >**Why do I need to install WSL?**
 >
-> Windows Subsystem for Linux (WSL) enables you to run Linux command lines inside Windows. All of our setup instructions are created for Mac OS/Linux, so we won't be able to provide support on how to do it on Windows.
+> Windows Subsystem for Linux (WSL) enables you to run Linux command line inside Windows. All of our setup instructions are created for Mac OS/Ubuntu, so we won't be able to provide support on how to do it on Windows.
 
-Follow **[this guide](guides/Windows_Subsystem_for_Linux_Installation_Guide_for_Windows_10.md)** to setup WSL on Windows 10.
+**Step 2:** Open a terminal (remember **[this](guides/Windows_Subsystem_for_Linux_Installation_Guide_for_Windows_10.md#Opening-the-WSL-terminal)**!!) and run the following command:
+
+```bash
+sudo apt update && sudo apt upgrade && sudo apt install git
+```
+
+**Step 3:** Open a terminal (remember **[this](guides/Windows_Subsystem_for_Linux_Installation_Guide_for_Windows_10.md#Opening-the-WSL-terminal)**!!) and check what version of Python you have by usind the command below. If your version is `Python 3.7.x` (`x` = any number), you can skip to step 4, otherwise continue with step 3.1 and 3.2
+
+```bash
+python3 --version
+```
+
+**Step 3.1:** Run the following commands to setup _Python 3.7_ (if you get an error with this command, check [this](#6-When-setting-up-python-3.7-i-get-an-error)
+):
+
+```bash
+sudo add-apt-repository ppa:deadsnakes/ppa
+```
+
+**Step 3.2:** Run the following commands to install _Python 3.7_
+
+```bash
+sudo apt update && sudo apt install python3.7 -y
+```
+
+**Step 4** Run the following command to get `pip` and `venv`:
+```bash
+sudo apt update && sudo apt upgrade && sudo apt install python3-pip python3.7-venv -y
+```
+>**Why do we install these?**
+>
+> We'll be using `pip` which is the reference Python package manager. You should always use a virtual environment to install python packages. We'll use `venv` to set them up.
 
 <br>
 
-### **1.1(b) MacOS Setup**
+### **1.1(b) Ubuntu Setup**
+
+This sections deals with installing some necessary packages.
+
+**Step 2:** Open a terminal and run the following command:
+
+```bash
+sudo apt update && sudo apt upgrade && sudo apt install git
+```
+
+**Step 3:** Open a terminal and check what version of Python you have by usind the command below. If your version is `Python 3.7.x` (`x` = any number), you can skip to step 4, otherwise continue with step 3.1 and 3.2
+
+```bash
+python3 --version
+```
+
+**Step 3.1:** Run the following commands to setup _Python 3.7_ (if you get an error with this command, check [this](#6-When-setting-up-python-3.7-i-get-an-error)
+):
+
+```bash
+sudo add-apt-repository ppa:deadsnakes/ppa
+```
+
+**Step 3.2:** Run the following commands to install _Python 3.7_
+
+```bash
+sudo apt update && sudo apt install python3.7 -y
+```
+
+**Step 4** Run the following command to get `pip` and `venv`:
+```bash
+sudo apt update && sudo apt upgrade && sudo apt install python3-pip python3.7-venv -y
+```
+>**Why do we install these?**
+>
+> We'll be using `pip` which is the reference Python package manager. You should always use a virtual environment to install python packages. We'll use `venv` to set them up.
+
+<br>
+
+### **1.1(c) MacOS Setup**
 
 Some of the steps in the following sections will require _Homebrew_ for MacOS.
 _Homebrew_ will make it easier to install software that we'll use later on.
@@ -96,11 +168,37 @@ _Homebrew_ will make it easier to install software that we'll use later on.
 
 <br>
 
-**Step 2:** Copy and paste the following line in the terminal:
-    ```bash
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-    ```
-    You may be prompted to install the _Command Line Developers Tools_. Confirm and, once it finishes, continue installing _Homebrew_ by pressing <kbd>enter</kbd> again.
+**Step 2:** To install Homebrew for MacOS, copy and paste the following line in the terminal:
+
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+```
+
+You may be prompted to install the _Command Line Developers Tools_. Confirm and, once it finishes, continue installing _Homebrew_ by pressing <kbd>enter</kbd> again.
+
+**Step 3:** open a terminal and run the following command:
+
+```bash
+brew update --verbose
+```
+
+**Step 4:** then run the following command:
+
+```bash
+brew install git
+```
+
+**Step 5:** then run the following command:
+
+```bash
+brew install python@3.7
+```
+
+**Step 6:** then run the following command:
+
+```bash
+brew link python@3.7
+```
 
 <br>
 
@@ -108,24 +206,11 @@ _Homebrew_ will make it easier to install software that we'll use later on.
 
 **Git** is a distributed version-control system for tracking changes in source  code. A **repository** is where code lives, and the code from the prep course will live at [`ds-prep-course-2021`](https://github.com/LDSSA/ds-prep-course-2021) repository (basically where you are right now, reading this). All the learning materials and exercises will be released (made available) on this repository.
 
-**Step 1:** Install Git
-
-(a) Under **Ubuntu**, open an Ubuntu terminal and run the following command:
-```bash
-sudo apt update && sudo apt upgrade && sudo apt install git
-```
-
-(b) Under **MacOS**, open a terminal and run the following command:
-```bash
-brew install git
-```
-<br>
-
-**Step 2:** [Sign up](https://github.com/join) for a _GitHub_ account and follow the instructions.
+**Step 1:** [Sign up](https://github.com/join) for a _GitHub_ account and follow the instructions.
 
 <br>
 
-**Step 3:** Open an Ubuntu terminal. Configure your email and username by running the 3 commands below. (**replace** `mig.dias.1212@gmail.com` below with your email and `buedaswag` with your GitHub username).
+**Step 2:** Open a terminal. Configure your email and username by running the 3 commands below. (**replace** `mig.dias.1212@gmail.com` below with the same email you used for github and `buedaswag` with your GitHub username).
 
 ```bash
 git config --global user.email "mig.dias.1212@gmail.com"
@@ -171,7 +256,7 @@ You can also check
 
 <br>
 
-**Step 1:** Open a Ubuntu/MacOs terminal (or use one you've already opened)
+**Step 1:** Open a terminal (or use one you've already opened)
 
 **Step 2:** Create a folder named `projects` by using the `mkdir` command:
 ```bash
@@ -224,47 +309,7 @@ git clone https://github.com/LDSSA/ds-prep-course-2021.git
 
 <br>
 
-### **1.5 Installing Python 3.7 and all necessary packages**
-
-<br>
-
-#### **1.5.1(a) Set up Python 3.7 in Ubuntu**
-
-<br>
-
-**Step 1:** Open an Ubuntu terminal and check what version of Python you have:
-
-```bash
-python3 --version
-```
-
-**Step 2:** If your version is not `Python 3.7.x` (`x` = any number), run the following to install _Python 3.7_:
-
-```bash
-sudo add-apt-repository ppa:deadsnakes/ppa -y && sudo apt update && sudo apt install python3.7 -y
-```
-
-**Step 3** Run the following command to get `pip` and `venv`:
-```bash
-sudo apt update && sudo apt upgrade && sudo apt install python3-pip python3.7-venv -y
-```
->**Why do we install these?**
->
-> We'll be using `pip` which is the reference Python package manager. You should always use a virtual environment to install python packages. We'll use `venv` to set them up.
-
-<br>
-
-#### **1.5.1(b) Set up Python 3.7 in Mac OS**
-
-<br>
-
-If you are using **Mac OS** you will need to install python, this can be done in a terminal by running:
-
-```bash
-brew update --verbose && brew install python@3.7 && brew link python@3.7
-```
-
-### **1.6 Creating a virtual environment**
+### **1.5 Creating a virtual environment**
 
 Before you work on a learning unit, you'll need to activate a [**virtual environment**](https://realpython.com/python-virtual-environments-a-primer/#what-is-a-virtual-environment). By using a virtual environment, you ensure that you have a stable and compatible set of Python packages. On the Prep Course we will use the same environment throughout. As a data scientist though, you'll probably create different environments for different purposes or projects.
 
@@ -296,7 +341,7 @@ pip install -U pip
 
 <br>
 
-### **1.7 Testing the workflow**
+### **1.6 Testing the workflow**
 Finally, test the workflow ([next section](#2-learning-unit-workflow)) on `"Week 00"` before April 5. This folder is used to give instructors guidelines to produce the learning units. We are also using it to ensure that you are able to run and submit a learning unit.
 
 <br>
@@ -459,7 +504,18 @@ We understand it's not ideal and are working on improving this workflow.
 During the Prep Course you will surely run into problems and have questions about the materials.
 Please refer to [this wiki page](https://github.com/LDSSA/wiki/wiki/Data-Science-Prep-Course#how-to-ask-for-help) on how to ask for help!
 
-You can contact us on Slack or, alternatively, [open an issue](https://github.com/LDSSA/ds-prep-course-2021/issues/).
+You can contact us on Slack. Here's how to post questions on Slack:
+
+1. Use the channel of the Week you're asking about;
+1. Check if your question was already asked before posting;
+1. If you want to report bugs on the materials, open an issue on ds-prep-course-2021;
+1. If you want to give feedback post it in the #feedback channel;
+1. Anything not related with the learning materials should go to the #random channel. No exceptions;
+1. Always answer in a thread;
+1. Use Direct Messages (DMs) to instructors only if you need to share your solutions or a personal concern.
+
+
+Alternatively, [open an issue](https://github.com/LDSSA/ds-prep-course-2021/issues/).
 
 <br>
 
@@ -471,6 +527,7 @@ You can contact us on Slack or, alternatively, [open an issue](https://github.co
 1. [When I pull from the `ds prep course-2021` repository, I get an error](#3-When-I-pull-from-the-ds-prep-course-2021-repository,-I-get-an-error)
 1. [When I try to open `jupyter notebook`, I get an error](#4-When-I-try-to-open-jupyter-notebook,-I-get-an-error)
 1. [When I use the `cp` command the `>` sign appears and the command does not execute](#5-When-I-use-the-`cp`-command-the->-sign-appears-and-the-command-does-not-execute)
+1. [When setting up python 3.7 i get an error](#6-When-setting-up-python-3.7-i-get-an-error)
 
 #### ___1. When I open Windows Explorer through Ubuntu, it goes to a different folder than in the guide___
 
@@ -535,6 +592,26 @@ cp -r ~/projects/ds-prep-course-2021/“Week 00" ds-prep-workspace
 
 Make sure to use this type of quotes `"` and not these ones `“`.
 
+#### ___6. When setting up python 3.7 i get an error___
+
+When I run this command:
+
+```bash
+sudo add-apt-repository ppa:deadsnakes/ppa
+```
+
+I get this error:
+
+```bash
+W: GPG error: http://apt.postgresql.org/pub/repos/apt focal-pgdg InRelease: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY 7FCC7D46ACCC4CF8
+```
+
+Solution: Take the id in front of `NO_PUBKEY` (in my case its `7FCC7D46ACCC4CF8`) and run the following command:
+
+```bash
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 7FCC7D46ACCC4CF8
+```
+
 <br>
 
 ## **6. Tips and Tricks**
@@ -542,13 +619,3 @@ Make sure to use this type of quotes `"` and not these ones `“`.
 Coming soon.
 
 <br>
-
-## **7. Tutorial videos**
-
-You can find here some video guides that follow the setup made for the Prep Course (2020):
-
-* [Setup guide for Windows - Part 1](https://www.youtube.com/watch?v=fWi3bYoHW18)
-* [Setup guide for Windows - Part 2](https://www.youtube.com/watch?v=bnJOQHh9pJ4)
-* [Setup guide for Mac](https://www.youtube.com/watch?v=qs0z4ibMFdU)
-* [Updates to Learning Units guide for Windows 10](https://www.youtube.com/watch?v=Q2Cezm6ufrE)
-* [Updates to Learning Units guide for Mac](https://www.youtube.com/watch?v=-fzIDfNBZ0I)
