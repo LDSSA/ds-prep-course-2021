@@ -23,6 +23,8 @@ Follow these steps to make sure your machine is ready **before** the course star
 
     1.1 (c) [MacOS Setup](#11c-macos-setup)
 
+    1.1 (d) [MacOS M1 Setup](#11d-macos-m1-setup)
+
     1.2 [Setup Git and GitHub](#12-setup-git-and-github)
 
     1.3 [Setup your Workspace Repository](#13-setup-your-workspace-repository)
@@ -124,7 +126,7 @@ This sections deals with installing some necessary packages.
 sudo apt update && sudo apt upgrade && sudo apt install git
 ```
 
-**Step 3:** Open a terminal and check what version of Python you have by usind the command below. If your version is `Python 3.7.x` (`x` = any number), you can skip to step 4, otherwise continue with step 3.1 and 3.2
+**Step 3:** Open a terminal and check what version of Python you have by using the command below. If your version is `Python 3.7.x` (`x` = any number), you can skip to step 4, otherwise continue with step 3.1 and 3.2
 
 ```bash
 python3 --version
@@ -174,6 +176,12 @@ _Homebrew_ will make it easier to install software that we'll use later on.
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 ```
 
+**Step 2.1:** Sometimes it's necessary to install xcode command line utils. To do so, do the following command before installing homebrew:
+
+```bash
+xcode-select --install
+```
+
 You may be prompted to install the _Command Line Developers Tools_. Confirm and, once it finishes, continue installing _Homebrew_ by pressing <kbd>enter</kbd> again.
 
 **Step 3:** open a terminal and run the following command:
@@ -201,6 +209,81 @@ brew link python@3.7
 ```
 
 <br>
+
+### **1.1(d) MacOS M1 Setup**
+
+So you got the new M1 and you're supper happy with how fast it is.. Unfortunately dealing with apple silicon requires a little
+get around. You no longer have a intel chip and most things are available for intel. But don't worry, we'll be able to get there in the end.
+
+**Step 1:** To open the terminal, choose one:
+* In Finder <img src='assets/finder.png' alt='Finder' width="4%" />, open the /Applications/Utilities folder, then double-click Terminal.
+* By pressing <kbd>cmd</kbd> + <kbd>space</kbd> then type `terminal` and press <kbd>enter</kbd>.
+
+    The terminal should now be open:
+
+    <img src='assets/mac_terminal.png' width="50%" />
+
+<br>
+
+**Step 1.1:** To use intel-based software, you'll need Rosetta2. Most of you should already have it installed for varied reasons. If you don't simply run the following line in the terminal:
+
+```bash
+softwareupdate --install-rosetta
+```
+
+This will launch the rosetta installer and you’ll have to agree to a license agreement.
+
+
+**Step 2:** To install Homebrew x86 version, aka `ibrew` for MacOS, copy and paste the following line in the terminal:
+
+```bash
+arch -x86_64 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+```
+
+**Step 2.1:** Sometimes it's necessary to install xcode command line utils. To do so, do the following command before installing homebrew:
+
+```bash
+xcode-select --install
+```
+
+**Step 3:** Add an alias with `ibrew` to your $PATH
+
+**Step 3.1:** Open .zshrc with nano to edit the file
+
+```bash
+nano ~/.zshrc
+```
+
+**Step 3.2:** Add the alias for `ibrew` at the end of the file
+
+```bash
+alias ibrew="arch -x86_64 /usr/local/bin/brew"
+```
+
+**Step 3.3:** Save the alterations to .zshrc with <kbd>Ctrl</kbd> + <kbd>Ctrl</kbd>, and enter <kbd>Y</kbd> when asked to save alterations.
+
+**Step 3.4:** Activate the alterations done to .zshrc
+```bash
+source ~/.zshrc
+```
+
+**Step 4:** Install python 3.7 with `ibrew`
+
+```bash
+ibrew install python@3.7
+```
+
+**Step 5:** Add python 3.7 to $PATH
+
+```bash
+export PATH="/usr/local/opt/python@3.7/bin:$PATH" >> ~/.zshrc 
+```
+
+**Step 6** Re-activate the alterations done to .zshrc
+```bash
+source ~/.zshrc
+```
+
 
 ### **1.2 Setup _Git_ and _GitHub_**
 
