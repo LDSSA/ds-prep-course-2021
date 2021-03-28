@@ -225,6 +225,15 @@ get around. You no longer have a intel chip and most things are available for in
 
 <br>
 
+**Step 1.1:** To use intel-based software, you'll need Rosetta2. Most of you should already have it installed for varied reasons. If you don't simply run the following line in the terminal:
+
+```bash
+softwareupdate --install-rosetta
+```
+
+This will launch the rosetta installer and you’ll have to agree to a license agreement.
+
+
 **Step 2:** To install Homebrew x86 version, aka `ibrew` for MacOS, copy and paste the following line in the terminal:
 
 ```bash
