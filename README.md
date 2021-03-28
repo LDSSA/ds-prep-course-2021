@@ -231,6 +231,12 @@ get around. You no longer have a intel chip and most things are available for in
 arch -x86_64 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 ```
 
+**Step 2.1:** Sometimes it's necessary to install xcode command line utils. To do so, do the following command before installing homebrew:
+
+```bash
+xcode-select --install
+```
+
 **Step 3:** Add an alias with `ibrew` to your $PATH
 
 **Step 3.1:** Open .zshrc with nano to edit the file
