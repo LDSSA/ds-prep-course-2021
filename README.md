@@ -87,10 +87,10 @@ If you are using MacOS, skip this section ([go to MacOS Setup](#11c-macos-setup)
 sudo apt update && sudo apt upgrade && sudo apt install git
 ```
 
-**Step 3:** Open a terminal (remember **[this](guides/Windows_Subsystem_for_Linux_Installation_Guide_for_Windows_10.md#Opening-the-WSL-terminal)**!!) and check what version of Python you have by usind the command below. If your version is `Python 3.7.x` (`x` = any number), you can skip to step 4, otherwise continue with step 3.1 and 3.2
+**Step 3:** Open a terminal (remember **[this](guides/Windows_Subsystem_for_Linux_Installation_Guide_for_Windows_10.md#Opening-the-WSL-terminal)**!!) and check if you already have `python3.7` by usind the command below. If your version is `Python 3.7.x` (`x` = any number), you can skip to step 4, otherwise continue with step 3.1 and 3.2
 
 ```bash
-python3 --version
+python3.7 --version
 ```
 
 **Step 3.1:** Run the following commands to setup _Python 3.7_ (if you get an error with this command, check [this](#6-When-setting-up-python-3.7-i-get-an-error)
@@ -129,7 +129,7 @@ sudo apt update && sudo apt upgrade && sudo apt install git
 **Step 3:** Open a terminal and check what version of Python you have by using the command below. If your version is `Python 3.7.x` (`x` = any number), you can skip to step 4, otherwise continue with step 3.1 and 3.2
 
 ```bash
-python3 --version
+python3.7 --version
 ```
 
 **Step 3.1:** Run the following commands to setup _Python 3.7_ (if you get an error with this command, check [this](#6-When-setting-up-python-3.7-i-get-an-error)
@@ -276,7 +276,7 @@ ibrew install python@3.7
 **Step 5:** Add python 3.7 to $PATH
 
 ```bash
-export PATH="/usr/local/opt/python@3.7/bin:$PATH" >> ~/.zshrc 
+export PATH="/usr/local/opt/python@3.7/bin:$PATH" >> ~/.zshrc
 ```
 
 **Step 6** Re-activate the alterations done to .zshrc
