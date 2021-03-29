@@ -611,6 +611,7 @@ Alternatively, [open an issue](https://github.com/LDSSA/ds-prep-course-2021/issu
 1. [When I try to open `jupyter notebook`, I get an error](#4-When-I-try-to-open-jupyter-notebook,-I-get-an-error)
 1. [When I use the `cp` command the `>` sign appears and the command does not execute](#5-When-I-use-the-`cp`-command-the->-sign-appears-and-the-command-does-not-execute)
 1. [When setting up python 3.7 i get an error](#6-When-setting-up-python-3.7-i-get-an-error)
+1. [Nothing happens when I type my password](#7-Nothing-happens-when-I-type-my-password)
 
 #### ___1. When I open Windows Explorer through Ubuntu, it goes to a different folder than in the guide___
 
@@ -695,19 +696,17 @@ Solution: Take the id in front of `NO_PUBKEY` (in my case its `7FCC7D46ACCC4CF8`
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 7FCC7D46ACCC4CF8
 ```
 
+#### ___7. Nothing happens when I type my password___
+
+In **step two** it asks me for the computer password. However, I am not being able to write anything
+
+Solution:
+When you write your password you might not get any visual feedback and that's okay! Write it as normal and hit <kbd>enter</kbd> when you're done!
+
 <br>
 
 ## **6. Tips and Tricks**
 
 Coming soon.
-
-<br>
-
-
-# Frequently Asked Questions
-
-## In **step two** it asks me for the computer password. However, I am not being able to write anything.
-
-When you write your password you might not get any visual feedback and that's okay! Write it as normal and hit <kbd>enter</kbd> when you're done!
 
 <br>
