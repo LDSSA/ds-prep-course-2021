@@ -702,3 +702,12 @@ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 7FCC7D46ACCC4CF8
 Coming soon.
 
 <br>
+
+
+# Frequently Asked Questions
+
+## In **step two** it asks me for the computer password. However, I am not being able to write anything.
+
+When you write your password you might not get any visual feedback and that's okay! Write it as normal and hit <kbd>enter</kbd> when you're done!
+
+<br>
