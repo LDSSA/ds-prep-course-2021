@@ -328,7 +328,7 @@ are working on, solve exercises, make changes to files, etc.
 
 1. Add a Python `.gitignore`.
 
-<img src='assets/create_repository.png' alt='Finder' width="75%" />
+<img src="https://user-images.githubusercontent.com/19359518/112880653-9ef76280-90c2-11eb-8768-00b2153756d5.png" alt='Finder' width="75%">
 
 You can also check
 [Creating a new repository](https://help.github.com/en/articles/creating-a-new-repository) on GitHub for help.
