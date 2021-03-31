@@ -491,7 +491,14 @@ cd ~/projects/ds-prep-workspace
 ```
 <br>
 
-**Step 2** - Open the Jupyter Notebook application by running:
+**Step 2** - Activate your virtual environment:
+```bash
+source ~/.virtualenvs/prep-venv/bin/activate
+```
+
+<br>
+
+**Step 3** - Open the Jupyter Notebook application by running:
 ```bash
 jupyter notebook
 ```
@@ -508,7 +515,7 @@ and your browser should pop up with Jupyter open. However, if this does not happ
 
 <br>
 
-**Step 3** - Work on the learning unit
+**Step 4** - Work on the learning unit
 
 All learning units come as a set of **Jupyter Notebooks**. These are documents that can contain text, images and live code that you can run interactively.
 
@@ -538,7 +545,7 @@ Make sure you open and go through the Learning Notebook(s) first.
 
 <br>
 
-**Step 4** -  Commit and push
+**Step 5** -  Commit and push
 
 Open a terminal and run the following:
 ```bash
