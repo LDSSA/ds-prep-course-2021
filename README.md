@@ -614,6 +614,7 @@ Alternatively, [open an issue](https://github.com/LDSSA/ds-prep-course-2021/issu
 1. [When I use the `cp` command the `>` sign appears and the command does not execute](#5-When-I-use-the-`cp`-command-the->-sign-appears-and-the-command-does-not-execute)
 1. [When setting up python 3.7 i get an error](#6-When-setting-up-python-3.7-i-get-an-error)
 1. [Nothing happens when I type my password](#7-Nothing-happens-when-I-type-my-password)
+1. [I still have a NotImplemented error](#8-I-still-have-a-NotImplemented-error)
 
 #### ___1. When I open Windows Explorer through Ubuntu, it goes to a different folder than in the guide___
 
