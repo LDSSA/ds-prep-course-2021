@@ -45,17 +45,11 @@ Follow these steps to make sure your machine is ready **before** the course star
 
 4. [How to ask for help](#4-how-to-ask-for-help)
 
-5. [Troubleshooting](#6-Troubleshooting)
+5. [Troubleshooting](#5-Troubleshooting)
 
-6. [Tips and Tricks](#7-Tips-and-Tricks)
+6. [Tips and Tricks](#6-Tips-and-Tricks)
 
-7. [Tutorial videos from Prep Course 2020](#8-tutorial-videos)
-
-<br>
-
-🎁🎬 Check the [tutorial videos](#videos) if you have any doubts after following this tutorial. These videos were made for the **Prep Course** of year 2020, so there may be some differences.
-
-<br>
+7. [Tutorial videos from Prep Course 2020](#7-tutorial-videos-from-prep-course-2020)
 
 ---
 ## **1. Initial Setup**
@@ -352,7 +346,8 @@ mkdir ~/projects
 cd ~/projects
 ```
 
-**Step 4:** You can now **clone** the `ds-prep-workspace` repository you created on GitHub (replace `<username>` below with your github username) by running the command:
+**Step 4:** You can now **clone** the `ds-prep-workspace` repository you created on GitHub.
+Replace `<username>` below with your github username, removing the brackets `< >`, and run the command:
 
 ```bash
 git clone https://github.com/<username>/ds-prep-workspace.git
@@ -710,6 +705,13 @@ In **step two** it asks me for the computer password. However, I am not being ab
 Solution:
 When you write your password you might not get any visual feedback and that's okay! Write it as normal and hit <kbd>enter</kbd> when you're done!
 
+#### ___8. I still have a NotImplemented error___
+
+I've completed the exercise in the Exercise Notebook but when I run the cell I get a **NotImplementedError**.
+
+Solution:
+The `raise NotImplementedError()` are added to the exercise cell as a placeholder for where you're supposed to add your solution/code. It is meant to be removed!
+
 <br>
 
 ## **6. Tips and Tricks**
@@ -717,3 +719,13 @@ When you write your password you might not get any visual feedback and that's ok
 Coming soon.
 
 <br>
+
+## **7. Tutorial videos from Prep Course 2020
+
+🎁🎬 Check the **tutorial videos** if you have any doubts after following this tutorial. These videos were made for the **Prep Course of year 2020**, so there may be some differences.
+
+ * [Setup guide for Windows - Part 1](https://www.youtube.com/watch?v=fWi3bYoHW18)
+* [Setup guide for Windows - Part 2](https://www.youtube.com/watch?v=bnJOQHh9pJ4)
+* [Setup guide for Mac](https://www.youtube.com/watch?v=qs0z4ibMFdU)
+* [Updates to Learning Units guide for Windows 10](https://www.youtube.com/watch?v=Q2Cezm6ufrE)
+* [Updates to Learning Units guide for Mac](https://www.youtube.com/watch?v=-fzIDfNBZ0I)
