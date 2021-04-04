@@ -2,20 +2,20 @@
 
 In this SLU you will learn about the following Linux BASH commands:
 
-- `pwd`: Print name of current directory
+- `pwd`: Print Working Directory
 - `ls` / `ls -a`: List directory contents
 - `cd`: Change directory
+- `mkdir`: Creating directories
+- `touch`: Creating new file without content
 - `cp`: Copying files and directories
 - `mv`: Moving / renaming files and directories
-- `mkdir`: Creating directories
 - `rm`: Removing files and directories
-- `touch`: Creating new file without content
 - `cat`: Concatenate files
 - Linux and Python: Running a python file from the command line
 
 And also learn about a Text Editor:
-- Visual Studio Code Installation
-- VSCode extensions
-- VSCode and WSL
-- Editing files with VSCode
-- VSCode and BASH terminal
+- Visual Studio Code (VS Code) installation
+- VS Code extensions
+- VS Code and Windows Subsystem for Linux (WSL)
+- Editing files with VS Code
+- VS Code and BASH terminal
