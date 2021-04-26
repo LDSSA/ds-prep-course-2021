@@ -10,7 +10,7 @@ def submit(slack_id: str, learning_unit: int) -> None:
     param learning_unit like 0
     '''
     data = {
-        "learning_unit": 0,
+        "learning_unit": learning_unit,
         "slack_id": slack_id,
         "grade": 0,
         "metadata": {}
