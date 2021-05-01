@@ -376,7 +376,7 @@ def exercise_7_validate_Team(Team, Player):
     test_team.hire_player(player_1)
     test_team.hire_player(player_2)
     assert player_1 in test_team.players
-    assert player_2 in test_team.players
+    assert player_2 not in test_team.players
 
     # checking fire_player
     test_team = Team(name='test_team', budget=20)
@@ -387,6 +387,7 @@ def exercise_7_validate_Team(Team, Player):
     test_team.fire_player(player_1)
     assert player_1 not in test_team.players
     assert player_2 in test_team.players
+    assert test_team.budget == 14
 
     # checking reset_points
     assert hasattr(Team, 'reset_points'), 'do you have a method to reset_points?'
@@ -422,7 +423,7 @@ def exercise_7_validate_Team(Team, Player):
     assert test_team.points_in_game == 1
 
 
-def exercise_7_validate_League(League, Team, Player):
+def exercise_8_validate_League(League, Team, Player):
     # tests for the Item class
     def test_item_class(League):
         assert hasattr(League, '__init__'), 'What about the __init__?'
