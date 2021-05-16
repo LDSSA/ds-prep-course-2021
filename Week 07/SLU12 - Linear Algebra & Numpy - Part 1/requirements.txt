@@ -1,0 +1,4 @@
+nbgrader==0.6.1
+matplotlib==3.4.1
+numpy==1.20.0
+Pillow==7.1.2
