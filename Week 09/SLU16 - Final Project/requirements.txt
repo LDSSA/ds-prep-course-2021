@@ -1,0 +1,4 @@
+jupyter==1.0.0
+nbgrader==0.6.1
+pygame==2.0.1
+pytest==5.1.1
