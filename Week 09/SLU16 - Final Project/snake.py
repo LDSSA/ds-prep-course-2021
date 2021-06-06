@@ -81,7 +81,7 @@ class SnakeGame:
         :param new_head_pos: Next snake head position
         :return: True if the new head position is equal to the apple position
         """
-        return False  # TODO: Check if snake have hitted the apple
+        return new_head_pos == self.apple_position
 
     def _hit_wall(self) -> None:
         """
@@ -104,7 +104,7 @@ class SnakeGame:
         :param new_head_pos: New snake head position.
         :return: True if snake have hit it self
         """
-        return False  # TODO: Check if snake have hitted it self
+        return new_head_pos in self.snake_positions
 
     def move_right(self) -> None:
         """
@@ -112,8 +112,9 @@ class SnakeGame:
         If snake is moving left, it should keep moving left.
         Changing direction to right is not allowed when you are moving right.
         """
-        print('Hit right key')
-        # self.velocity =
+        if self.velocity == (-VELOCITY_NORM, 0):
+            return
+        self.velocity = (VELOCITY_NORM, 0)
 
     def move_left(self) -> None:
         """
@@ -122,8 +123,9 @@ class SnakeGame:
         Changing direction to left is not allowed when you are moving right
         The velocity norm is always the constant value VELOCITY_NORM
         """
-        print('Hit left key')
-        # self.velocity =
+        if self.velocity == (VELOCITY_NORM, 0):
+            return
+        self.velocity = (-VELOCITY_NORM, 0)
 
     def move_down(self) -> None:
         """
@@ -132,8 +134,9 @@ class SnakeGame:
         Changing direction to down is not allowed when you are moving up.
         The velocity norm is always the constant value VELOCITY_NORM.
         """
-        print('Hit down key')
-        # self.velocity =
+        if self.velocity == (0, -VELOCITY_NORM):
+            return
+        self.velocity = (0, VELOCITY_NORM)
 
     def move_up(self) -> None:
         """
@@ -142,8 +145,9 @@ class SnakeGame:
         Changing direction to up is not allowed when you are moving down.
         The velocity norm is always the constant value VELOCITY_NORM
         """
-        print('Hit up key')
-        # self.velocity =
+        if self.velocity == (0, VELOCITY_NORM):
+            return
+        self.velocity = (0, -VELOCITY_NORM)
 
     def stop_game(self) -> None:
         print('Game ended')
