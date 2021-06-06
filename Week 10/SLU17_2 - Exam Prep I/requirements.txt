@@ -1,0 +1,4 @@
+nbgrader==0.6.1
+matplotlib==3.1.2
+numpy==1.18
+jupyter==1.0.0
