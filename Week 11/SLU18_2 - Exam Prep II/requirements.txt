@@ -4,3 +4,6 @@ numpy==1.18
 pytest
 ortools
 geopy
+jupyter==1.0.0
+
+
