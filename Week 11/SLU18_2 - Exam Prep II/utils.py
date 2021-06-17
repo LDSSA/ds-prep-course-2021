@@ -16,6 +16,10 @@ import sys
 
 
 # No picking
+def exercise_4_5(answer_4_5):
+    assert answer_4_5 == 3
+    print("Answer is correct. Good Job.")
+    
 def exercise_6(answers):
     solution = {"question_1": 4, "question_2": 3, "question_3":2,"question_4":3,"question_5":2}
     common_pairs = dict()
